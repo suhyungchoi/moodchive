@@ -1,0 +1,864 @@
+@charset "utf-8";
+
+html,
+body,
+div,
+span,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+em,
+img,
+small,
+strong,
+b,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tr,
+th,
+td,
+article,
+aside,
+footer,
+header,
+nav,
+section,
+summary,
+video,
+* {
+    padding: 0;
+    margin: 0;
+}
+
+html, body {
+    text-size-adjust: none;
+    /* text-size-adjust : 브라우저가 자동으로 텍스트 크기를 확대 및 축소하는 것을 제어한다. */
+    /* 가로 모드로 바꾸면 글자가 커지거나 줄어드는 경우가 있는데, 이 속성을 none으로 하면 디자인한 글자 크기가 유지된다. */
+    /* 모바일 브라우저에서 글자 크기를 자동으로 바꾸지 못하게 막는 설정 */
+    /* 디자인 의도대로 폰트 크기를 고정하려는 용도 */
+    /* prevent font scaling in landscape */
+    -webkit-text-size-adjust: none;
+    /* chrome, safari, 최신 opera */
+    -moz-text-size-adjust: none;
+    /* firefox */
+    -ms-text-size-adjust: none;
+    /* internet explorer */
+    -o-text-size-adjust: none;
+    /* 예전 opera */
+}
+
+
+ul,
+ol {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* 기본 꾸미기 */
+body {
+    font-size: 24px;
+    font-family: 'SlowGothic', sans-serif;
+    line-height: 1.5;
+    color: #333;
+    background-color: #F5EBFF;
+    overflow-x: hidden;
+}
+
+/* 마우스 커서 */
+/* 모든 요소의 기본 커서 숨기기 */
+* {
+    cursor: none !important;
+}
+
+.custom-cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 30px;
+    height: 30px;
+    background-color: #2d4720;
+    mix-blend-mode: difference;
+    border-radius: 50%;
+    transform: translate(-50%, -50%) scale(1);
+    pointer-events: none;
+    z-index: 99999999;
+    transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.custom-cursor.hovered {
+    transform: translate(-50%, -50%) scale(2) !important;
+}
+
+
+/* 부드러운 페이지 전환 */
+.page-transition {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #635770;
+    z-index: 100000;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.6s ease-in-out;
+}
+
+.page-transition.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+#wrap {
+    min-width: 1840px;
+}
+
+/* ----------------------------- top --------------------------------- */
+#top_wrap {
+    background-color: #635770;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    /* 스크롤 시 고정하기 위한 핵심 코드 */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.top_inner {
+    max-width: 1800px;
+    width: 100%;
+    height: 100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.top_logo img {
+    display: block;
+}
+
+.top_menu {
+    display: flex;
+    gap: 80px;
+}
+
+.top_menu li a {
+    color: #ffffff;
+    letter-spacing: 0.05em;
+}
+
+.top_menu li a:hover {
+    font-weight: bold;
+}
+
+
+
+/* ---------------------------- Contents -----------------------------*/
+.main_container {
+    max-width: 1320px;
+    width: 100%;
+    margin: 0px auto;
+    padding: 100px;
+    display: flex;
+    align-items: flex-start;
+    /* 자식 요소 높이 각자 유지되도록 */
+    gap: 40px;
+}
+
+/* --- 왼쪽 프로필 (고정) --- */
+.profile_wrap {
+    width: 320px;
+    /* 기존 300px에서 약간 확대 */
+    flex-shrink: 0;
+    /* 크기 축소 방지 */
+    /* 스크롤 시 화면에 고정시키는 코드 */
+    position: sticky;
+    top: 140px;
+    /* 헤더 높이(100px) + 여백(40px) */
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    /* 각 하얀색 카드들 사이의 간격 통일 */
+}
+
+.profile_card {
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 40px 20px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+}
+
+.profile_img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background-color: #e8e8e8;
+    /* 이미지 없을 때 배경 */
+    margin: 0 auto 20px;
+    overflow: hidden;
+}
+
+.profile_img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.profile_name {
+    font-family: 'Sweet', sans-serif;
+    font-weight: 600;
+    font-size: 24px;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+.profile_email {
+    font-family: 'Sweet', sans-serif;
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 25px;
+}
+
+.btn_edit {
+    background-color: #635770;
+    color: #fff;
+    padding: 12px 30px;
+    border-radius: 30px;
+    font-size: 16px;
+    width: 100%;
+    /* 버튼이 박스 너비에 꽉 차게 변경 */
+    transition: 0.3s;
+    border: none;
+    cursor: pointer;
+}
+
+.btn_edit:hover {
+    background-color: #4A405A;
+    transform: translateY(-2px);
+    /* 폰트 커짐 대신 떠오르는 효과로 세련되게 변경 */
+}
+
+.profile_menu {
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 20px 10px;
+    /* 여백 조정 */
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    /* 메뉴 아이템 간 간격 */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+}
+
+.profile_menu li {
+    font-family: 'Sweet', sans-serif;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 15px 20px;
+    font-size: 16px;
+    color: #666;
+    cursor: pointer;
+    border-radius: 12px;
+    position: relative;
+    /* 화살표 추가 기준점 */
+    transition: background-color 0.3s ease;
+}
+
+.profile_menu li:hover {
+    background-color: #F8F5FB;
+    /* 호버 시 옅은 배경색 */
+}
+
+.profile_menu li img {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+}
+
+/* 호버 시 우측에 나타나는 화살표(>) 효과  */
+.profile_menu li::after {
+    content: '>';
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%) translateX(-10px);
+    font-size: 18px;
+    font-weight: 800;
+    color: #635770;
+    opacity: 0;
+    /* 평소에는 숨김 */
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.profile_menu li:hover::after {
+    opacity: 1;
+    /* 나타남 */
+    transform: translateY(-50%) translateX(0);
+    /* 화살표가 스르륵 오른쪽으로 밀려오는 효과 */
+}
+
+/* --- 하단 설정 / 친구초대 카드 --- */
+.settings_card {
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+}
+
+.setting_item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: 0.2s ease;
+    cursor: pointer;
+}
+
+.setting_item:hover {
+    scale: 1.05;
+}
+
+.setting_item img {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+}
+
+.setting_item span {
+    font-family: 'Sweet', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: #666;
+}
+
+.setting_divider {
+    width: 1px;
+    height: 14px;
+    background-color: #D1C8DC;
+}
+
+
+/* --- 오른쪽 콘텐츠 영역 --- */
+.content_wrap {
+    flex-grow: 1;
+    /* 남은 공간 차지 */
+    min-width: 0;
+    /* Flexbox 내에서 넘침 방지 */
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+/* 공통 화이트 라운드 박스 */
+.section_box {
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 40px 50px 80px 50px;
+}
+
+.section_title {
+    font-size: 36px;
+    color: #635770;
+    margin-bottom: 30px;
+}
+
+/* 1) 탭 폴더 영역 */
+.tab_folders {
+    display: flex;
+    gap: 180px;
+    justify-content: center;
+    padding-top: 20px;
+}
+
+.folder_item {
+    display: flex;
+    flex-direction: column;
+    /* 폴더와 글자를 위아래로 세로 배치 */
+    align-items: center;
+    /* 위아래로 배치된 요소를 가운데 정렬 */
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.folder_item span {
+    color: #635770;
+}
+
+/* 기존 확대(scale) 효과 삭제하고, 살짝 위로 뜨는 효과만 남김 (원치 않으면 제거 가능) */
+.folder_item:hover {
+    transform: translateY(-5px);
+}
+
+/* 💡 추가된 폴더 이미지 겹치기 랩퍼 */
+.folder_img_wrap {
+    position: relative;
+    width: 115px;
+    height: 89px;
+    margin-bottom: 15px;
+}
+
+/* 💡 겹쳐진 이미지 공통 속성 및 부드러운 전환(transition) 효과 */
+.folder_img_wrap img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    display: block;
+    transition: opacity 0.4s ease;
+}
+
+.folder_img_wrap .folder_open {
+    opacity: 0;
+    /* 평소엔 열린 폴더 숨김 */
+}
+
+.folder_item:hover .folder_open {
+    opacity: 1;
+    /* 마우스 올리면 열린 폴더 서서히 보임 */
+}
+
+.folder_item:hover .folder_closed {
+    opacity: 0;
+    /* 마우스 올리면 닫힌 폴더 서서히 숨김 */
+}
+
+.folder_item span {
+    font-size: 22px;
+    line-height: 1;
+    /* 글자 높이 통일로 완벽한 가로 정렬 보장 */
+}
+
+
+/* 2) Record 영역 */
+.desc_text {
+    font-family: 'Sweet', sans-serif;
+    font-size: 22px;
+    margin-bottom: 30px;
+}
+
+.grid_4cols {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 30px;
+    row-gap: 60px;
+    /* 💡 위아래(줄 사이) 간격을 60px로 넓게 띄워줍니다 */
+}
+
+.item_card {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* 카드 안의 내용(포스터, 글자)을 수직 중앙으로 정렬 */
+}
+
+.item_img_wrap {
+    position: relative;
+    width: 165px;
+    /* 포스터 사이즈 165px로 고정 */
+    height: 250px;
+    /* 💡 높이를 고정해야 모든 포스터의 하단 선과 글자가 일직선으로 정렬됩니다 */
+    display: flex;
+    align-items: flex-end;
+    /* 포스터 이미지를 바닥(하단 선)에 딱 붙게 정렬 */
+    justify-content: center;
+}
+
+/* 뱃지 이미지에는 165px이 강제 적용되지 않도록 예외 처리 */
+.item_img_wrap>img:not(.badge_icon) {
+    width: 165px;
+    max-height: 100%;
+    /* 이미지가 고정된 높이(250px)를 넘지 않도록 제한 */
+    height: auto;
+    /* 비율 높이 알아서 자동 조정 */
+    object-fit: contain;
+    /* 찌그러지지 않게 원본 비율 유지 */
+    display: block;
+}
+
+/* 이미지로 저장된 아이콘 뱃지 스타일 */
+.badge_icon {
+    position: absolute;
+
+    top: -5px;
+    right: -23px;
+    width: 45px;
+    /* 💡 이제 여기서 원하는 px로 변경하시면 바로바로 바뀝니다! */
+    height: auto;
+    z-index: 10;
+}
+
+.item_info {
+    font-family: 'Sweet', sans-serif;
+    text-align: center;
+    /* 글자 가운데 정렬 */
+    width: 165px;
+    /* 포스터 너비에 맞춰서 글자가 감싸지도록 설정 */
+    margin-top: 15px;
+    /* 제목 사이의 간격 */
+}
+
+.item_info h4 {
+    font-size: 17px;
+    margin-bottom: 5px;
+}
+
+.item_info p {
+    font-size: 14px;
+}
+
+
+
+
+
+/* 3) Collections 영역 */
+.collections_wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0;
+}
+
+.collections_swiper {
+    width: 220px;
+    height: 310px;
+    margin-bottom: 30px;
+}
+
+.collections_swiper .swiper-slide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: #fff;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+.collections_swiper .swiper-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+
+.btn_collection {
+    background-color: #635770;
+    color: #fff;
+    padding: 12px 40px;
+    border-radius: 30px;
+    font-size: 16px;
+    transition: 0.3s;
+    border: none;
+    cursor: pointer;
+}
+
+
+
+
+
+
+/* 4) Pick 영역 */
+/* 💡 Pick 섹션 전용 하트 D-day 뱃지 스타일 추가 */
+.badge_heart {
+    position: absolute;
+    top: -5px;
+    right: -27px;
+    width: 52px;
+    height: 45px;
+    background: url('../images/mylog/heart.png') no-repeat center/contain;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Sweet', sans-serif;
+    font-size: 13px;
+    color: #fff;
+    /* 글자색을 흰색으로 지정 */
+    font-weight: bold;
+    z-index: 10;
+    padding-bottom: 3px;
+    /* 하트 모양 특성에 맞춰 글자를 살짝 올려 수직 중앙 미세 조정 */
+}
+
+.badge.d_day {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background: #635770;
+    color: #fff;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Sweet', sans-serif;
+    font-size: 12px;
+    border-radius: 50%;
+    z-index: 10;
+}
+
+.item_info h4 {
+    font-family: 'Sweet', sans-serif;
+    font-size: 17px;
+    margin-bottom: 5px;
+}
+
+.item_info p {
+    font-family: 'Sweet', sans-serif;
+    font-size: 14px;
+    white-space: nowrap;
+}
+
+.divider {
+    width: 100%;
+    height: 1px;
+    background-color: #635770;
+    opacity: 0.2;
+    margin: 60px 0;
+}
+
+.goods_grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    /* 💡 5열에서 4열로 수정하여 위 전시 리스트와 열을 맞춤 (자동 줄바꿈 됨) */
+    text-align: center;
+    column-gap: 20px;
+    row-gap: 60px;
+}
+
+/* 💡 굿즈 및 글자 세로 중앙 정렬을 위한 속성 추가 */
+.goods_item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.goods_item .item_img_wrap {
+    width: 100%;
+    max-width: 180px;
+    /* 굿즈 이미지가 너무 거대해지지 않도록 최대 넓이 제한 */
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    aspect-ratio: 1 / 1;
+    background-color: transparent;
+    border: none;
+    padding-bottom: 0;
+    border-bottom: none;
+    border-radius: 0;
+    overflow: hidden;
+    margin-bottom: 15px;
+    /* 이미지와 상품명 텍스트 사이의 여백 */
+}
+
+.goods_item .item_img_wrap>img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.goods_item h4 {
+    font-family: 'Sweet', sans-serif;
+    font-size: 17px;
+    margin-bottom: 5px;
+}
+
+.goods_item p {
+    font-family: 'Sweet', sans-serif;
+    font-size: 14px;
+}
+
+
+
+/* =======================================================
+            팝업(모달) CSS 추가 
+           ======================================================= */
+.modal_overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    /* 어두운 반투명 배경 */
+    z-index: 99999;
+    display: none;
+    /* 평소에는 숨김 */
+    justify-content: center;
+    align-items: center;
+}
+
+.modal_content {
+    background-color: #FFFFFF;
+    width: 500px;
+    height: 700px;
+    /* 시안 비율에 맞춘 너비 */
+    border-radius: 30px;
+    /* 둥근 팝업 모서리 */
+    padding: 50px 50px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    box-sizing: border-box;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* 팝업 닫기 버튼 (X) */
+.modal_close {
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    background: none;
+    border: none;
+    font-size: 20px;
+    color: #635770;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.modal_close:hover {
+    transform: scale(1.1);
+}
+
+/* 날짜 및 감정 뱃지 박스 */
+.modal_date_box {
+    background-color: #F5EBFF;
+    border: 1px solid #635770;
+    border-radius: 30px;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.date_left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 18px;
+    color: #635770;
+}
+
+.date_left span {
+    transform: translateY(-2px);
+}
+
+.date_left img {
+    width: 22px;
+    /* 캘린더 아이콘 크기 */
+    height: 22px;
+}
+
+.mood_right {
+    display: flex;
+    gap: 10px;
+}
+
+.mood_right img {
+    width: 22px;
+    height: auto;
+}
+
+/* 포스터 이미지 박스 */
+.modal_poster_box {
+    border: 1px solid #635770;
+    border-radius: 20px;
+    background-color: #F5EBFF;
+    /* 아주 연한 보라색 배경 */
+    padding: 20px 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    font-family: 'Sweet', sans-serif;
+    color: #635770;
+}
+
+.modal_poster_box img {
+    width: 200px;
+    height: auto;
+    margin-bottom: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.modal_poster_box h4 {
+    font-size: 18px;
+    font-weight: 800;
+    margin-bottom: 5px;
+}
+
+.modal_poster_box p {
+    font-size: 14px;
+    color: #635770;
+}
+
+/* 텍스트 리뷰 박스 */
+.modal_text_box {
+    background-color: #F5EBFF;
+    border: 1px solid #635770;
+    border-radius: 20px;
+    padding: 13px;
+    font-family: 'Sweet', sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    color: #222;
+    text-align: justify;
+}
+
+/* 하단 갤러리/공유 아이콘 */
+.modal_actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+    margin-top: 5px;
+    padding-right: 10px;
+}
+
+.modal_actions img {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.modal_actions img:hover {
+    transform: scale(1.1);
+}
