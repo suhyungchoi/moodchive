@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1840">
+    <!-- 브라우저 뷰포트 너비를 1360px로 고정하여 페이지를 그리도록 설정 -->
+    <title>Archive</title>
+
+    <!-- 파비콘 연결 -->
+    <link rel="shortcut icon" href="./images/favicon/favicon.png" type="image/x-icon">
+
+    <!-- AOS 연결 -->
+    <!-- transform과 함께 사용할 수 없음 -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+    <!-- 외부 css 연결 -->
+    <link rel="stylesheet" href="css/archive_style.css">
+
+    <!-- 폰트 연결 -->
+    <link rel="stylesheet" href="./css/font.css">
+</head>
+
+<body>
+    <!-- 페이지 전환 레이어 -->
+    <div class="page-transition" id="transitionLayer"></div>
+
+    <!-- 커스텀 커서 -->
+    <div class="custom-cursor" id="cursor"></div>
+
+    <!-- 전체 -->
+    <div id="wrap">
+
+        <!-- top 시작 -->
+        <div id="top_wrap">
+            <div class="top_inner">
+                <h1 class="top_logo">
+                    <a href="./index.html">
+                        <img src="./images/mood/top_logo.svg" alt="Moodchive">
+                    </a>
+                </h1>
+                <nav>
+                    <ul class="top_menu">
+                        <li><a href="./mood.html">MOOD</a></li>
+                        <li><a href="./archive.html">ARCHIVE</a></li>
+                        <li><a href="./goods.html">GOODS</a></li>
+                        <li><a href="#">EXHIBITION</a></li>
+                        <li><a href="./mylog.html">MY LOG</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <!-- top 끝 -->
+
+        <!-- content 시작 -->
+        <div id="archive_wrap">
+            <div class="archive_inner">
+
+                <!-- 상단 글자 -->
+                <div class="inner_text">
+                    <p>How we feel now</p>
+                    <p>차곡차곡 쌓인 아카이버들의 감정 기록을 열어보세요</p>
+                </div>
+
+                <!-- 중앙 도형 -->
+                <!-- onclick="showMood('이름')" 을 추가해서 어떤 도형을 눌렀는지 자바스크립트에 알려줍니다 -->
+                <div class="inner_icon" data-aos="fade-up" data-aos-duration="3000">
+                    <img src="./images/mood/pink.png" alt="inner_icon" id="btn_pink" onclick="showMood('pink')">
+                    <img src="./images/mood/blue.png" alt="inner_icon" id="btn_blue" onclick="showMood('blue')">
+                    <img src="./images/mood/orange.png" alt="inner_icon" id="btn_orange" onclick="showMood('orange')">
+                    <img src="./images/mood/green.png" alt="inner_icon" id="btn_green" onclick="showMood('green')">
+                    <img src="./images/mood/purple.png" alt="inner_icon" id="btn_purple" onclick="showMood('purple')">
+                </div>
+
+            </div>
+
+
+            <!-- 아카이버들의 감정 기록 (도형 바탕) -->
+            <div id="content_pink" class="mood_content">
+                <div class="cloud_area">
+                    <!-- 배경 구름 이미지 -->
+                    <img src="./images/archive/archive_pink.png" alt="archive_pink" class="cloud_bg">
+
+                    <!-- 둥둥 떠다니는 말풍선 기록들 -->
+                    <div class="floating-bubble bubble-1">
+                        <p class="bubble_id"><strong>말랑한 구름</strong> · 1시간 전</p>
+                        <p>"너무 예쁜 공간! 오랜만에 행복했다"</p>
+                        <span>📍 회현 피크닉(piknic)</span>
+                    </div>
+                    <div class="floating-bubble bubble-2">
+                        <p class="bubble_id"><strong>프로혼놀러</strong> · 1시간 전</p>
+                        <p>"럭키비키! 우연히 들어왔는데 내 취향 다 때려 박은 공간"</p>
+                        <span>📍 그라운드시소 성수</span>
+                    </div>
+                    <div class="floating-bubble bubble-5">
+                        <p class="bubble_id"><strong>취미는 사진</strong> · 2시간 전</p>
+                        <p>"사진 엄청 잘 나오는 곳! 인생샷 건져서 오늘 기분 최고"</p>
+                        <span>📍 성수 익명의 감정들</span>
+                    </div>
+                    <div class="floating-bubble bubble-4">
+                        <p class="bubble_id"><strong>동네 고양이</strong> · 1시간 전</p>
+                        <p>"귀여운 거 잔뜩 볼 수 있어서 쌓였던 우울함이 싹 가셨다"</p>
+                        <span>📍 서울숲 디뮤지엄</span>
+                    </div>
+                    <div class="floating-bubble bubble-3">
+                        <p class="bubble_id"><strong>산책하는 먼지</strong> · 2시간 전</p>
+                        <p>"귀여운 거 + 예쁜 거 = 심장 아픔... 여기서 몽글몽글하게 힐링"</p>
+                        <span>📍 삼청동 국제갤러리</span>
+                    </div>
+                    <div class="floating-bubble bubble-6">
+                        <p class="bubble_id"><strong>집순이</strong> · 4시간 전</p>
+                        <p>"오랜만에 전시 봤는데 너무 좋았다! 오늘 내 기분: 맑음"</p>
+                        <span>📍 예술의전당 한가람미술관</span>
+                    </div>
+                    <div class="floating-bubble bubble-7">
+                        <p class="bubble_id"><strong>무계획 즉흥러</strong> · 3시간 전</p>
+                        <p>"행복 별거 없네! 전시 보고 가득 충전 완료"</p>
+                        <span>📍 국립현대미술관 서울</span>
+                    </div>
+                </div>
+
+
+
+                <!-- 공간 디테일 영역 -->
+                <div id="space_wrap">
+
+                    <!-- 뒤로가기 버튼 -->
+                    <div class="btn_back">
+                        <img src="./images/archive/btn.png" alt="back">
+                    </div>
+
+                    <!-- 메인 헤더 텍스트 -->
+                    <div class="page_title">
+                        <p>아카이버가 다녀온 공간은...</p>
+                    </div>
+
+                    <!-- 1. 전시 상세  -->
+                    <div class="white_box">
+                        <!-- 탭 타이틀 -->
+                        <div class="box_tab">
+                            <p>익명의 감정들</p>
+                        </div>
+
+
+                        <!-- 우측 상단 좋아요/공유 아이콘 추가 -->
+                        <div class="action_icons">
+                            <div class="icon_btn icon_heart">
+                                <!-- 빈 하트 이미지 (파일명 확인) -->
+                                <img src="./images/archive/heart.png" alt="heart" class="heart_empty">
+                                <!-- 채워진 하트 이미지 (파일명 확인) -->
+                                <img src="./images/archive/heart_in.png" alt="heart" class="heart_filled">
+                            </div>
+                            <div class="icon_btn icon_share">
+                                <!-- 공유 이미지 (파일명 확인) -->
+                                <img src="./images/archive/share.png" alt="공유하기">
+                            </div>
+                        </div>
+
+                        <!-- 전시 이미지들 -->
+                        <div class="exhibition_images">
+                            <div class="main_poster">
+                                <img src="./images/archive/poster.png" alt="poster">
+                            </div>
+                            <div class="sub_images">
+                                <img src="./images/archive/exhibition.png" alt="sub_image_1">
+                                <img src="./images/archive/space.png" alt="sub_image_2">
+                            </div>
+                        </div>
+
+                        <!-- 전시 설명 -->
+                        <div class="exhibition_desc">
+                            <p>무드카이브(Moodchive)는 감정 기반 공간 추천 아카이브의 첫 오프라인 단독 기획전인 &lt;익명의 감정들&gt;을 개최한다. 이번 전시는 무드카이브
+                                플랫폼에 누적된
+                                수많은 익명의 감정 기록들을 시각, 청각 등 다감각적인 미디어 아트로 구현하여 다채로운 공간으로 구성된다.</p>
+                            <p>전시는 기쁨, 슬픔, 위로, 공감 등 인간이 느끼는 보편적인 감정의 스펙트럼을 조명하며, 바쁘게 흘러가는 현대 사회 속에서 온전히 자신의 내면을 들여다보고
+                                타인과 연결되는 공감의 장을 마련하고자 한다. 관람객이 직접 자신의 감정을 기록하고 이를 실시간으로 시각화하는 인터랙티브 아트 공간을 비롯하여, 타인의 기록에
+                                깊이 몰입할 수 있는 미디어 전시가 포함되어 감정을 매개로 끊임없이 소통하는 무드카이브의 지향점을 심층적으로 소개한다.</p>
+                        </div>
+
+                        <!-- 전시 세부 정보 (표 대신 div 레이아웃 적용) -->
+                        <div class="exhibition_info">
+                            <div class="info_row">
+                                <div class="info_col">
+                                    <span class="info_label">기간</span>
+                                    <span class="info_value">2026-10-01 ~ 2026-10-28</span>
+                                </div>
+                                <div class="info_col">
+                                    <span class="info_label">장소</span>
+                                    <span class="info_value">성수 무드 랩 (서울 성동구 39-7 무드아카이브랩 5F)</span>
+                                </div>
+                            </div>
+                            <div class="info_row">
+                                <div class="info_col">
+                                    <span class="info_label">주최/주관</span>
+                                    <span class="info_value">무드카이브(Moodchive)</span>
+                                </div>
+                                <div class="info_col">
+                                    <span class="info_label">관람료</span>
+                                    <span class="info_value">무료 (무드카이브 회원 인증 시)</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 2. 통계 도형 영역 -->
+                    <div class="page_title mt_80">
+                        <p>이 공간에서 가장 많이 기록된 감정은...</p>
+                    </div>
+
+                    <div class="white_box emotion_box">
+                        <!-- 탭 타이틀 -->
+                        <div class="box_tab">
+                            <p>행복한</p>
+                        </div>
+
+                        <!-- 둥둥 떠다니는 감정 도형들 -->
+                        <div class="space_icon">
+                            <div class="shape_item shape-pink">
+                                <img src="./images/mood/pink.png" alt="pink">
+                                <!-- 퍼센트 텍스트 추가 (data-target에 목표 숫자 기입) -->
+                                <span class="counter_text" data-target="52">0%</span>
+                            </div>
+                            <div class="shape_item shape-blue">
+                                <img src="./images/mood/blue.png" alt="blue">
+                                <span class="hover_text">28%</span>
+                            </div>
+                            <div class="shape_item shape-green">
+                                <img src="./images/mood/green.png" alt="green">
+                                <span class="hover_text">10%</span>
+                            </div>
+                            <div class="shape_item shape-purple">
+                                <img src="./images/mood/purple.png" alt="purple">
+                                <span class="hover_text">6%</span>
+                            </div>
+                            <div class="shape_item shape-orange">
+                                <img src="./images/mood/orange.png" alt="orange">
+                                <span class="hover_text">4%</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 3. 아카이브 영역 -->
+                    <div class="page_title mt_80">
+                        <p>아카이버들의 아카이브</p>
+                    </div>
+
+                    <!-- 소제목 및 버튼 텍스트 -->
+                    <div class="archive_subtitle">
+                        <span>이곳을 방문하셨다면 MY LOG에서 기록해보세요</span>
+                        <a href="./mylog.html" class="btn_record">
+                            기록하러 가기 ▶
+                        </a>
+                    </div>
+
+                    <div class="white_box log_box">
+                        <div class="log_badge_list">
+                            <!-- 감정 기록 뱃지들 -->
+                            <div class="log_badge">
+                                <img src="./images/archive/badge_pink.png" alt="icon">
+                                <p>온전히 내 안의 작은 행복을 마주할 수 있었다</p>
+                            </div>
+                            <div class="log_badge">
+                                <img src="./images/archive/badge_blue.png" alt="icon">
+                                <p>지친 일상 속에서 다정한 위로와 웃음을 얻고 가요</p>
+                            </div>
+                            <div class="log_badge">
+                                <img src="./images/archive/badge_pink.png" alt="icon">
+                                <p>잊고 있었던 행복을 다시 찾았어요!</p>
+                            </div>
+                            <div class="log_badge">
+                                <img src="./images/archive/badge_green.png" alt="icon">
+                                <p>나를 더 아끼고 사랑해야겠다고 다짐하게 만든 공간</p>
+                            </div>
+                            <div class="log_badge">
+                                <img src="./images/archive/badge_purple.png" alt="icon">
+                                <p>비어있는 공간이 주는 편안함에 깊이 몰입했어요</p>
+                            </div>
+                            <div class="log_badge">
+                                <img src="./images/archive/badge_purple.png" alt="icon">
+                                <p>내 감정을 돌아볼 수 있었던 시간</p>
+                            </div>
+                            <div class="log_badge">
+                                <img src="./images/archive/badge_blue.png" alt="icon">
+                                <p>평범했던 오늘 하루가 특별하고 다정하게 기억될 것 같아요</p>
+                            </div>
+                            <div class="log_badge">
+                                <img src="./images/archive/badge_pink.png" alt="icon">
+                                <p>다채로운 빛과 함께 내 마음도 환해지는 기분!</p>
+                            </div>
+                            <div class="log_badge">
+                                <img src="./images/archive/badge_pink.png" alt="icon">
+                                <p>거창하지 않아도 충분히 벅찬 일상의 소중함을 깨달았어요</p>
+                            </div>
+                            <div class="log_badge">
+                                <img src="./images/archive/badge_orange.png" alt="icon">
+                                <p>내 안의 불안함도 결국 나의 일부임을 깨달았어요</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 공간 디테일 영역 끝 -->
+            </div>
+
+            <!-- footer -->
+            <div id="footer">
+                <div class="footer_inner">
+                    <div class="footer_logo">
+                        <img src="./images/main/logo_footer.svg" alt="footer_logo">
+                    </div>
+
+                    <ul class="footer_nav">
+                        <li><a href="./mood.html">MOOD</a></li>
+                        <li><a href="./archive.html">ARCHIVE</a></li>
+                        <li><a href="./goods.html">GOODS</a></li>
+                        <li><a href="#">EXHIBITION</a></li>
+                        <li><a href="./mylog.html">MY</a></li>
+                    </ul>
+
+                    <p class="footer_slogan">Archive Your Mood, Keep Your Moments.</p>
+
+                    <p class="footer_copy">&copy; 2026 Mood Archive Project</p>
+                </div>
+            </div>
+            <!-- footer -->
+        </div>
+        <!-- content 끝 -->
+    </div>
+
+
+    <!-- AOS 적용 -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+
+    <!-- jQuery 불러오기 -->
+    <script src="./js/jquery-4.0.0.min.js"></script>
+
+    <!-- 스크롤 이벤트 & 카운팅 애니메이션 스크립트 추가 -->
+    <script>
+        $(document).ready(function () {
+            /* -----------------------------------------------------------
+                처음 시작할 때 뒤로가기 버튼, 공간 영역, 푸터 무조건 숨기기
+            ----------------------------------------------------------- */
+            $('.btn_back').hide();
+            $('.space_wrap, [id="space_wrap"]').hide();
+            $('#footer').hide(); // 처음에는 푸터 숨김 (구름 뷰)
+
+            /* -----------------------------------------------------------
+                1. 커스텀 커서 애니메이션
+            ----------------------------------------------------------- */
+            const $cursor = $('.custom-cursor');
+
+            $(window).on('mousemove', function (e) {
+                $cursor.css({
+                    left: e.clientX + 'px',
+                    top: e.clientY + 'px'
+                });
+            });
+
+            $('a, button, .img_wrap, .shapes, .goods > div, .inner_icon img, .floating-bubble, .btn_back, .space_icon img, .action_icons').on('mouseenter', function () {
+                $cursor.addClass('hovered');
+            }).on('mouseleave', function () {
+                $cursor.removeClass('hovered');
+            });
+
+            /* -----------------------------------------------------------
+                2. 페이지 로딩 & 전환 효과 (보라색 화면)
+            ----------------------------------------------------------- */
+            $(window).on('load', function () {
+                $('.page-transition').addClass('loaded');
+            });
+            setTimeout(function () {
+                $('.page-transition').addClass('loaded');
+            }, 100);
+
+            $('a').on('click', function (e) {
+                const targetUrl = $(this).attr('href');
+                if (targetUrl && targetUrl !== '#' && !targetUrl.startsWith('javascript:')) {
+                    e.preventDefault();
+                    $('.page-transition').removeClass('loaded').addClass('active');
+
+                    setTimeout(function () {
+                        window.location.href = targetUrl;
+                    }, 600);
+                }
+            });
+
+            /* -----------------------------------------------------------
+                3. 말풍선 클릭 -> '공간 상세(space_wrap)'로 가짜 페이지 이동
+            ----------------------------------------------------------- */
+            $('.floating-bubble').on('click', function () {
+                const $parentContent = $(this).closest('.mood_content');
+
+                $('.page-transition').removeClass('loaded').addClass('active');
+
+                setTimeout(function () {
+                    $('.archive_inner').hide();
+                    $parentContent.find('.cloud_area').hide();
+
+                    $parentContent.find('.space_wrap, [id="space_wrap"]').show();
+                    $parentContent.find('.btn_back').show();
+
+                    // 공간 디테일 영역이 나타나면 푸터도 보이게 함
+                    $('#footer').show();
+
+                    $('html, body').scrollTop(0);
+
+                    $('.page-transition').removeClass('active').addClass('loaded');
+                }, 600);
+            });
+
+            /* -----------------------------------------------------------
+                4. 뒤로가기 버튼 -> 다시 원래 구름 화면으로 복귀
+            ----------------------------------------------------------- */
+            $('.btn_back').on('click', function () {
+                const $parentContent = $(this).closest('.mood_content');
+
+                $('.page-transition').removeClass('loaded').addClass('active');
+
+                setTimeout(function () {
+                    $('.archive_inner').show();
+
+                    $parentContent.find('.space_wrap, [id="space_wrap"]').hide();
+                    $('.btn_back').hide();
+
+                    // 구름 화면으로 돌아가면 푸터를 다시 숨김
+                    $('#footer').hide();
+
+                    $parentContent.find('.cloud_area').show();
+
+                    $('html, body').scrollTop($parentContent.offset().top - 80);
+
+                    $('.page-transition').removeClass('active').addClass('loaded');
+                }, 600);
+            });
+
+            /* -----------------------------------------------------------
+                5. 스크롤 감지 및 숫자 카운팅 효과 
+            ----------------------------------------------------------- */
+            const counterElement = document.querySelector('.counter_text');
+            if (counterElement) {
+                const targetNumber = parseInt(counterElement.getAttribute('data-target'));
+                const duration = 1500; // 애니메이션 지속 시간 (1.5초)
+
+                // 숫자 카운팅 함수
+                const animateCounter = (el, target) => {
+                    let startTimestamp = null;
+                    const step = (timestamp) => {
+                        if (!startTimestamp) startTimestamp = timestamp;
+                        const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+
+                        // 점점 느려지는 효과 (Ease Out)
+                        const easeProgress = progress * (2 - progress);
+                        el.innerText = Math.floor(easeProgress * target) + '%';
+
+                        if (progress < 1) {
+                            window.requestAnimationFrame(step);
+                        } else {
+                            el.innerText = target + '%';
+                        }
+                    };
+                    window.requestAnimationFrame(step);
+                };
+
+                // 스크롤 감지용 Observer
+                const observer = new IntersectionObserver((entries, obs) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            animateCounter(counterElement, targetNumber);
+                            obs.unobserve(entry.target); // 한 번만 실행되도록 관찰 해제
+                        }
+                    });
+                }, { threshold: 0.5 }); // 박스가 화면에 50% 이상 보였을 때 실행
+
+                // 감정 통계 박스 관찰 시작
+                const emotionBox = document.querySelector('.emotion_box');
+                if (emotionBox) {
+                    observer.observe(emotionBox);
+                }
+            }
+        });
+
+        /* -----------------------------------------------------------
+            6. 좋아요(하트) 버튼 토글 기능
+        ----------------------------------------------------------- */
+        $('.icon_heart').on('click', function () {
+            $(this).toggleClass('liked'); // 클릭할 때마다 liked 클래스를 넣었다 뺐다 함
+        });
+
+
+        /* -----------------------------------------------------------
+            7. 상단 감정 도형 클릭 시 컨텐츠 전환 및 스크롤
+        ----------------------------------------------------------- */
+        function showMood(moodName) {
+            $('.inner_icon img').removeClass('active');
+            $('#btn_' + moodName).addClass('active');
+
+            $('.mood_content').not('#content_' + moodName).slideUp(300);
+
+            const $target = $('#content_' + moodName);
+
+            // 다른 도형을 누르면 열려있던 스페이스 영역은 모두 숨기고 구름으로 리셋
+            $target.find('.space_wrap, [id="space_wrap"]').hide();
+            $target.find('.cloud_area').show();
+
+            $('.btn_back').hide();
+
+            // 공간 디테일 영역이 닫혔으므로 푸터도 숨김 처리
+            $('#footer').hide();
+
+            $target.slideDown(500, function () {
+                // 화면 맨 아래로 스크롤
+                $('html, body').animate({
+                    scrollTop: $(document).height()
+                }, 1500);
+            });
+        }
+    </script>
+</body>
+
+</html>

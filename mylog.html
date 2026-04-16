@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1840">
+    <!-- 브라우저 뷰포트 너비를 1360px로 고정하여 페이지를 그리도록 설정 -->
+    <title>My_log</title>
+
+    <!-- 파비콘 연결 -->
+    <link rel="shortcut icon" href="./images/favicon/favicon.png" type="image/x-icon">
+
+    <!-- Swiper 11 버전 CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <!-- 외부 css 연결 -->
+    <link rel="stylesheet" href="css/mylog_style.css">
+
+    <!-- 폰트 연결 -->
+    <link rel="stylesheet" href="./css/font.css">
+</head>
+
+<body>
+    <!-- 페이지 전환 레이어 -->
+    <div class="page-transition" id="transitionLayer"></div>
+
+    <!-- 커스텀 커서 -->
+    <div class="custom-cursor" id="cursor"></div>
+
+    <!-- 전체 -->
+    <div id="wrap">
+        <!-- top 시작 -->
+        <div id="top_wrap">
+            <div class="top_inner">
+                <h1 class="top_logo">
+                    <a href="./index.html">
+                        <!-- 이미지 경로 깨짐 방지를 위해 임시 텍스트 추가, 원래 코드로 수정해서 쓰세요! -->
+                        <img src="./images/mood/top_logo.svg" alt="Moodchive">
+                    </a>
+                </h1>
+                <nav>
+                    <ul class="top_menu">
+                        <li><a href="./mood.html">MOOD</a></li>
+                        <li><a href="./archive.html">ARCHIVE</a></li>
+                        <li><a href="./goods.html">GOODS</a></li>
+                        <li><a href="#">EXHIBITION</a></li>
+                        <li><a href="./mylog.html">MY LOG</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <!-- top 끝 -->
+
+        <!-- contents 시작 -->
+        <div class="main_container">
+
+            <!-- 왼쪽: 고정 프로필 영역 (Sticky) -->
+            <div class="profile_wrap">
+                <!-- 프로필 정보 카드 -->
+                <div class="profile_card">
+                    <div class="profile_img">
+                        <img src="./images/mylog/profile_img.jpg" alt="profile">
+                    </div>
+                    <p class="profile_name">돌멩이</p>
+                    <p class="profile_email">stone01@gmail.com</p>
+                    <button class="btn_edit">내 감정 기록 ▶</button>
+                </div>
+
+                <!-- 하단 메뉴 리스트 -->
+                <ul class="profile_menu">
+                    <li><img src="./images/mylog/write.png" alt="icon"> 공간 기록하기</li>
+                    <li><img src="./images/mylog/collection_icon.png" alt="icon"> 컬렉션 만들기</li>
+                    <li><img src="./images/mylog/finger.png" alt="icon">Pick</li>
+                    <li><img src="./images/mylog/space.png" alt="icon"> My log 꾸미기</li>
+                </ul>
+
+                <!-- 추가된 하단 설정 및 친구초대 탭 -->
+                <div class="settings_card">
+                    <div class="setting_item">
+                        <img src="./images/mylog/setting.png" alt="설정">
+                        <span>프로필 수정 · 공유</span>
+                    </div>
+                    <div class="setting_divider"></div>
+                    <div class="setting_item">
+                        <img src="./images/mylog/add.png" alt="친구 초대">
+                        <span>친구 초대</span>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <!-- 오른쪽: 스크롤 콘텐츠 영역 -->
+            <div class="content_wrap">
+
+                <!-- 1. MY LOG 탭박스 -->
+                <section class="section_box">
+                    <p class="section_title">MY LOG</p>
+                    <div class="tab_folders">
+                        <div class="folder_item">
+                            <!-- 💡 닫힌 폴더와 열린 폴더 두 이미지를 겹쳐놓기 위한 랩퍼 추가 -->
+                            <div class="folder_img_wrap">
+                                <img src="./images/mylog/folder.png" alt="folder" class="folder_closed">
+                                <img src="./images/mylog/folder_open.png" alt="folder open" class="folder_open">
+                            </div>
+                            <span>Record</span>
+                        </div>
+                        <div class="folder_item">
+                            <div class="folder_img_wrap">
+                                <img src="./images/mylog/folder.png" alt="folder" class="folder_closed">
+                                <img src="./images/mylog/folder_open.png" alt="folder open" class="folder_open">
+                            </div>
+                            <span>Collection</span>
+                        </div>
+                        <div class="folder_item">
+                            <div class="folder_img_wrap">
+                                <img src="./images/mylog/folder.png" alt="folder" class="folder_closed">
+                                <img src="./images/mylog/folder_open.png" alt="folder open" class="folder_open">
+                            </div>
+                            <span>Pick !</span>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 2. Record 섹션 -->
+                <section class="section_box">
+                    <p class="section_title">Record</p>
+                    <p class="desc_text">돌멩이 님, 지금까지 24개의 전시를 다녀왔어요.</p>
+
+                    <div class="grid_4cols">
+
+                        <!-- 아이템 1 -->
+                        <div class="item_card">
+                            <div class="item_img_wrap">
+                                <img src="./images/mylog/record/exhibition7.jpg" alt="poster">
+                                <img src="./images/mylog/icon_green.png" class="badge_icon" alt="icon">
+                            </div>
+                            <div class="item_info">
+                                <h4>신진작가 옴니버스전</h4>
+                                <p>2026. 03. 01</p>
+                            </div>
+                        </div>
+                        <!-- 아이템 2 -->
+                        <div class="item_card">
+                            <div class="item_img_wrap">
+                                <img src="./images/mylog/record/exhibition13.png" alt="poster">
+                                <img src="./images/mylog/icon_purple.png" class="badge_icon" alt="icon">
+                            </div>
+                            <div class="item_info">
+                                <h4>뉴 미디어의 재해석</h4>
+                                <p>2026. 02. 04</p>
+                            </div>
+                        </div>
+                        <!-- 아이템 3 -->
+                        <div class="item_card">
+                            <div class="item_img_wrap">
+                                <img src="./images/mylog/record/exhibition6.jpg" alt="poster">
+                                <img src="./images/mylog/icon_pink.png" class="badge_icon" alt="icon">
+                            </div>
+                            <div class="item_info">
+                                <h4>어제는 과거의 미래다</h4>
+                                <p>2025. 11. 04</p>
+                            </div>
+                        </div>
+                        <!-- 아이템 4 -->
+                        <div class="item_card">
+                            <div class="item_img_wrap">
+                                <img src="./images/mylog/pick/exhibition2.png" alt="poster">
+                                <img src="./images/mylog/icon_green.png" class="badge_icon" alt="icon">
+                            </div>
+                            <div class="item_info">
+                                <h4>우리는 이어져있다</h4>
+                                <p>2025. 10. 12</p>
+                            </div>
+                        </div>
+
+
+
+                        <!-- 추가 포스터들 (동일 구조 반복) -->
+                        <div class="item_card">
+                            <div class="item_img_wrap">
+                                <img src="./images/mylog/record/exhibition12.png" alt="poster">
+                                <img src="./images/mylog/icon_orange.png" class="badge_icon" alt="icon">
+                            </div>
+                            <div class="item_info">
+                                <h4>숨쉬는 기계</h4>
+                                <p>2025. 10. 08</p>
+                            </div>
+                        </div>
+                        <div class="item_card">
+                            <div class="item_img_wrap">
+                                <img src="./images/mylog/record/exhibition10.png" alt="poster">
+                                <img src="./images/mylog/icon_pink.png" class="badge_icon" alt="icon">
+                            </div>
+                            <div class="item_info">
+                                <h4>광화 신년기획전</h4>
+                                <p>2025. 03. 31</p>
+                            </div>
+                        </div>
+                        <div class="item_card">
+                            <div class="item_img_wrap">
+                                <img src="./images/mylog/record/exhibition14.jpg" alt="poster">
+                                <img src="./images/mylog/icon_blue.png" class="badge_icon" alt="icon">
+                            </div>
+                            <div class="item_info">
+                                <h4>특별한 순간 사진전</h4>
+                                <p>2024. 12. 13</p>
+                            </div>
+                        </div>
+                        <div class="item_card">
+                            <div class="item_img_wrap">
+                                <img src="./images/mylog/record/exhibition8.png" alt="poster">
+                                <img src="./images/mylog/icon_blue.png" class="badge_icon" alt="icon">
+                            </div>
+                            <div class="item_info">
+                                <h4>모두의 어떤 차이</h4>
+                                <p>2023. 08. 10</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </section>
+
+                <!-- 3. Collections 섹션 -->
+                <section class="section_box">
+                    <P class="section_title">Collections</P>
+                    <p class="desc_text">나만의 시선으로 전시를 엮어보세요.</p>
+
+                    <div class="collections_wrap">
+                        <!-- 💡 Swiper 적용된 겹쳐진 포스터 (마우스로 드래그 가능) -->
+                        <div class="swiper collections_swiper">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <img src="./images/mylog/collection/exhibition4.png" alt="poster">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="./images/mylog/record/exhibition8.png" alt="poster">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="./images/mylog/collection/exhibition2.jpg" alt="poster">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="./images/mylog/collection/exhibition3.jpg" alt="poster">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="./images/mylog/record/exhibition13.png" alt="poster">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="./images/mylog/collection/exhibition5.jpg" alt="poster">
+                                </div>
+                            </div>
+                        </div>
+                        <button class="btn_collection">브랜딩에 영감을 준 전시들</button>
+                    </div>
+                </section>
+
+                <!-- 4. Pick 섹션 -->
+                <section class="section_box">
+                    <p class="section_title">Pick !</p>
+
+                    <!-- 전시 리스트 -->
+                    <div class="grid_4cols">
+                        <div class="item_card">
+                            <div class="item_img_wrap">
+                                <img src="./images/mylog/pick/exhibition1.png" alt="poster">
+                                <div class="badge_heart">D-3</div>
+                            </div>
+                            <div class="item_info">
+                                <h4>도파민 하이프</h4>
+                                <p>2025. 12. 05 - 2026. 04. 04</p>
+                            </div>
+                        </div>
+                        <div class="item_card">
+                            <div class="item_img_wrap">
+                                <img src="./images/mylog/pick/exhibition4.png" alt="poster">
+                                <div class="badge_heart">D-60</div>
+                            </div>
+                            <div class="item_info">
+                                <h4>붉은 돌, 유리 바다</h4>
+                                <p>2026. 03. 27 - 2026. 05. 31</p>
+                            </div>
+                        </div>
+                        <div class="item_card">
+                            <div class="item_img_wrap">
+                                <img src="./images/mylog/pick/exhibition3.png" alt="poster">
+                                <div class="badge_heart">D-88</div>
+                            </div>
+                            <div class="item_info">
+                                <h4>데이미언 허스트</h4>
+                                <p>2025. 03. 20 - 2026. 06. 28</p>
+                            </div>
+                        </div>
+                        <div class="item_card">
+                            <div class="item_img_wrap">
+                                <img src="./images/mylog/record/exhibition4.png" alt="poster">
+                                <div class="badge_heart">D-326</div>
+                            </div>
+                            <div class="item_info">
+                                <h4>오~ 감각미술관</h4>
+                                <p>2025. 04. 30 - 2027. 02. 21</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 구분선 -->
+                    <div class="divider"></div>
+
+                    <!-- 굿즈 리스트 (4열 배치 및 자동 줄바꿈) -->
+                    <div class="goods_grid">
+                        <div class="goods_item">
+                            <div class="item_img_wrap">
+                                <img src="./images/mylog/case.png" alt="goods">
+                            </div>
+                            <h4>Daily Case (green)</h4>
+                            <p>₩19,000</p>
+                        </div>
+                        <div class="goods_item">
+                            <div class="item_img_wrap">
+                                <img src="./images/mylog/cup.png" alt="goods">
+                            </div>
+                            <h4>Record Mug (pink)</h4>
+                            <p>₩17,000</p>
+                        </div>
+                        <div class="goods_item">
+                            <div class="item_img_wrap">
+                                <img src="./images/mylog/notes.png" alt="goods">
+                            </div>
+                            <h4>Archive Notes (blue)</h4>
+                            <p>₩15,000</p>
+                        </div>
+                        <div class="goods_item">
+                            <div class="item_img_wrap">
+                                <img src="./images/mylog/tape.png" alt="goods">
+                            </div>
+                            <h4>Masking Tape Set</h4>
+                            <p>₩13,000</p>
+                        </div>
+                        <div class="goods_item">
+                            <div class="item_img_wrap">
+                                <img src="./images/mylog/keyring.png" alt="goods">
+                            </div>
+                            <h4>Moment Keyring (green)</h4>
+                            <p>₩11,000</p>
+                        </div>
+                    </div>
+
+                </section>
+            </div>
+            <!-- contents 끝 -->
+        </div>
+    </div>
+
+    <!-- =======================================================
+          팝업(모달창) HTML 구조 추가 
+         ======================================================= -->
+    <div class="modal_overlay" id="recordModal">
+        <div class="modal_content">
+            <!-- 닫기 버튼 -->
+            <button class="modal_close" onclick="closeModal()">✕</button>
+
+            <!-- 상단: 날짜 및 감정 아이콘 -->
+            <div class="modal_date_box">
+                <div class="date_left">
+                    <img src="./images/mylog/date.png" alt="calendar">
+                    <span>2025-03-31</span>
+                </div>
+                <div class="mood_right">
+                    <!-- 우측 핑크 뱃지 3개 -->
+                    <img src="./images/mylog/icon_pink.png" alt="mood">
+                    <img src="./images/mylog/icon_pink.png" alt="mood">
+                    <img src="./images/mylog/icon_pink.png" alt="mood">
+                </div>
+            </div>
+
+            <!-- 중앙: 포스터 및 전시 제목 -->
+            <div class="modal_poster_box">
+                <img src="./images/mylog/record/exhibition10.png" alt="poster">
+                <h4>광화 신년기획전</h4>
+                <p>2025.01.07 - 2025. 03. 31</p>
+            </div>
+
+            <!-- 하단: 텍스트 후기 -->
+            <div class="modal_text_box">
+                <p>추운 겨울밤, 외벽에 펼쳐진 환상적인 전시는 말 그대로 행복이었습니다. 꽃들이 만개한 숲과 별이 빛나는 아치를 보며 마치 동화 속에
+                    들어온 듯 마음까지 따뜻해지는 기쁨을 느꼈어요. 이 감정을 오랫동안 간직하기 위해 이곳에 소중히 기록합니다.</p>
+            </div>
+
+            <!-- 우측 하단 아이콘 (사진 추가/공유하기) -->
+            <div class="modal_actions">
+                <img src="./images/mylog/save_img.png" alt="save">
+                <img src="./images/mylog/share.png" alt="share">
+            </div>
+        </div>
+    </div>
+    <!-- // 팝업(모달창) HTML 끝 -->
+
+
+
+
+
+    <!-- jQuery 불러오기 -->
+    <script src="./js/jquery-4.0.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+
+    <script>
+        /* -----------------------------------------------------------
+            모달(팝업) 열고 닫는 스크립트 추가 
+        ----------------------------------------------------------- */
+        // 어떤 아이템 카드(.item_card)를 클릭해도 무조건 팝업이 열리도록 설정 (이벤트 위임 방식)
+        $(document).on('click', '.item_card', function () {
+            $('#recordModal').css('display', 'flex').hide().fadeIn(300); // 부드럽게 나타남
+            $('body').css('overflow', 'hidden'); // 팝업 떴을 때 배경 스크롤 방지
+        });
+
+        // 닫기 함수 (X 버튼 클릭 시)
+        function closeModal() {
+            $('#recordModal').fadeOut(300); // 부드럽게 사라짐
+            $('body').css('overflow', 'auto'); // 배경 스크롤 다시 허용
+        }
+
+        // 모달창 바깥쪽(어두운 배경) 클릭 시 닫기
+        $('#recordModal').on('click', function (e) {
+            if ($(e.target).is('#recordModal')) {
+                closeModal();
+            }
+        });
+
+
+        /* -----------------------------------------------------------
+            Swiper 초기화 (Collections 영역)
+   ----------------------------------------------------------- */
+        var swiper = new Swiper(".collections_swiper", {
+            effect: "cards",
+            grabCursor: true,
+        });
+
+        /* -----------------------------------------------------------
+                1. 커스텀 커서 애니메이션
+            ----------------------------------------------------------- */
+        const $cursor = $('.custom-cursor');
+
+        $(window).on('mousemove', function (e) {
+            $cursor.css({
+                left: e.clientX + 'px',
+                top: e.clientY + 'px'
+            });
+        });
+
+        $('a, button, .item_card, .folder_item, .goods_item, .profile_menu li, .setting_item, .modal_actions').on('mouseenter', function () {
+            $cursor.addClass('hovered');
+        }).on('mouseleave', function () {
+            $cursor.removeClass('hovered');
+        });
+
+        /* -----------------------------------------------------------
+            2. 페이지 로딩 & 전환 효과 (보라색 화면)
+        ----------------------------------------------------------- */
+        $(window).on('load', function () {
+            $('.page-transition').addClass('loaded');
+        });
+        setTimeout(function () {
+            $('.page-transition').addClass('loaded');
+        }, 100);
+
+        $('a').on('click', function (e) {
+            const targetUrl = $(this).attr('href');
+            if (targetUrl && targetUrl !== '#' && !targetUrl.startsWith('javascript:')) {
+                e.preventDefault();
+                $('.page-transition').removeClass('loaded').addClass('active');
+
+                setTimeout(function () {
+                    window.location.href = targetUrl;
+                }, 600);
+            }
+        });
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1840">
+    <!-- 브라우저 뷰포트 너비를 1360px로 고정하여 페이지를 그리도록 설정 -->
+    <title>Moodchive_intro</title>
+
+    <!-- 파비콘 연결 -->
+    <link rel="shortcut icon" href="./images/favicon/favicon.png" type="image/x-icon">
+
+    <!-- 외부 css 연결 -->
+    <link rel="stylesheet" href="css/intro_style.css">
+
+    <!-- 폰트 연결 -->
+    <link rel="stylesheet" href="./css/font.css">
+</head>
+
+<body>
+
+    <!-- 커서 -->
+    <div class="custom-cursor"></div>
+
+    <div id="visual">
+        <div class="visual_inner">
+            <div class="visual_text">
+                <!-- 타이핑될 한국어 텍스트 컨테이너 -->
+                <span id="korean_text" class="korean_text"></span>
+                <span>Archive your mood,</span>
+                <div class="sliding_wrapper">
+                    <span id="dynamic_text">Find your space</span>
+                </div>
+            </div>
+
+            <!-- 아이콘 -->
+            <ul class="icon">
+                <li class="icon_blue"><img src="./images/main/blue.png" alt="icon"></li>
+                <li class="icon_orange"><img src="./images/main/orange.png" alt="icon"></li>
+                <li class="icon_green"><img src="./images/main/green.png" alt="icon"></li>
+                <li class="icon_pink"><img src="./images/main/pink.png" alt="icon"></li>
+                <li class="icon_purple"><img src="./images/main/purple.png" alt="icon"></li>
+            </ul>
+
+            <!-- 하단 로고 -->
+            <div class="bottom_logo">
+                <img src="./images/main/inrto_logo.svg" alt="Moodchive Logo">
+            </div>
+        </div>
+    </div>
+
+    <!-- jQuery 불러오기 -->
+    <script src="./js/jquery-4.0.0.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+
+            // ★ 추가된 부분: 커스텀 커서가 마우스를 따라다니도록 설정
+            const $cursor = $('.custom-cursor');
+            $(window).on('mousemove', function (e) {
+                $cursor.css({
+                    left: e.clientX + 'px',
+                    top: e.clientY + 'px'
+                });
+            });
+
+            // ★ 이 부분(JS)이 꼭 있어야 크기 변화 효과가 작동합니다! 
+            // 아이콘이나 로고에 마우스를 올리면 커서에 hovered 클래스를 추가해줍니다.
+            $('.icon li').on('mouseenter', function () {
+                $cursor.addClass('hovered');
+            }).on('mouseleave', function () {
+                $cursor.removeClass('hovered');
+            });
+
+            // ★ 영어 텍스트 배열
+            const phrases = [
+                "Find your space",
+                "Keep your moments",
+                "in Moodchive"
+            ];
+
+            // ★ 매칭되는 한국어 텍스트 배열
+            const korPhrases = [
+                "당신만의 공간을 찾으세요",
+                "당신의 순간들을 간직하세요",
+                "무드카이브에서"
+            ];
+
+            let currentIndex = 0;
+
+            /**
+             * 타자기 효과(Typing) 함수 개선
+             * 이전 타이핑 찌꺼기를 막고 한 글자씩 안정적으로 쓰도록 변경
+             */
+            function typeText($element, text, duration) {
+                $element.empty(); // 기존 텍스트 지우기
+
+                // 기존 타이핑 애니메이션이 진행 중이라면 중지
+                if ($element.data('typingInterval')) {
+                    clearInterval($element.data('typingInterval'));
+                }
+
+                let i = 0;
+                let intervalTime = duration / text.length; // 800ms를 글자수로 나눈 간격
+
+                let typingInterval = setInterval(function () {
+                    i++;
+                    $element.text(text.substring(0, i)); // 한 글자씩 문자를 늘려가며 덮어쓰기
+                    if (i >= text.length) {
+                        clearInterval(typingInterval);
+                    }
+                }, intervalTime);
+
+                // 새로운 인터벌 아이디 저장
+                $element.data('typingInterval', typingInterval);
+            }
+
+            // 1. 초기 등장 애니메이션
+            $('#visual').animate({ opacity: 1 }, 1000, function () {
+                // 전체 배경이 켜진 직후, 첫 번째 한국어 타이핑 시작
+                typeText($('#korean_text'), korPhrases[0], 800);
+
+                $('.icon li').each(function (index) {
+                    setTimeout(() => {
+                        $(this).addClass('fade-in');
+                    }, index * 200);
+                });
+            });
+
+            // 2. 문구 슬라이드 및 타이핑 시스템
+            function slideNextText() {
+                const $target = $('#dynamic_text');
+                const $korTarget = $('#korean_text');
+                const slideDistance = 100;
+
+                // 혹시 모를 애니메이션 겹침을 방지하기 위해 중단
+                $target.stop(true, true);
+                $korTarget.stop(true, true);
+
+                // [애니메이션 단계 1]
+                // 영어 텍스트 슬라이드 아웃
+                $target.animate({ left: -slideDistance + 'px', opacity: 0 }, 800);
+
+                // 한국어 텍스트 페이드아웃 (완료 후 콜백 실행)
+                $korTarget.animate({ opacity: 0 }, 800, function () {
+
+                    // [애니메이션 단계 2] 텍스트 교체 준비
+                    currentIndex = (currentIndex + 1) % phrases.length;
+
+                    // 영어 텍스트 교체 후 대기 위치로 이동
+                    $target.text(phrases[currentIndex]);
+                    $target.css({ left: slideDistance + 'px', opacity: 0 });
+
+                    // [애니메이션 단계 3 & 4]
+                    // 영어 텍스트 인(In) 애니메이션
+                    $target.animate({ left: '0px', opacity: 1 }, 800);
+
+                    // 한국어 텍스트는 즉시 투명도 1로 되돌리고 800ms 동안 타이핑 시작
+                    $korTarget.empty().css('opacity', 1);
+                    typeText($korTarget, korPhrases[currentIndex], 800);
+                });
+            }
+
+            // 4.5초마다 반복
+            setInterval(slideNextText, 4500);
+
+            // 3. 도형(아이콘) 클릭 시에만 페이지 전환
+            $('.icon li').on('click', function (e) {
+                e.stopPropagation();
+                $('body').fadeOut(1000, function () {
+                    window.location.href = 'index.html';
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
