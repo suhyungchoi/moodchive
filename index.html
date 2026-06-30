@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="감정에 어울리는 전시와 공간을 발견하고 기록하는 무드카이브">
+    <title>MOODCHIVE</title>
+
+    <!-- 파비콘 연결 -->
+    <link rel="shortcut icon" href="./images/favicon/favicon.png" type="image/x-icon">
+
+    <!-- 폰트 CSS -->
+    <link rel="stylesheet" href="./css/font.css">
+
+    <!-- 메인 CSS -->
+    <link rel="stylesheet" href="./css/index_style.css">
+
+    <!-- 커스텀 커서 css -->
+    <link rel="stylesheet" href="./css/cursor.css">
+
+    <!-- 모션 css -->
+    <link rel="stylesheet" href="./css/motion.css">
+</head>
+
+<body>
+    <div id="wrap">
+
+        <!-- ==================== HEADER ==================== -->
+        <header id="header">
+            <div class="header_inner">
+                <!-- 로고 -->
+                <h1 class="header_logo">
+                    <a href="./index.html">
+                        <img src="./images/index/logo.svg" alt="Moodchive">
+                    </a>
+                </h1>
+
+                <!-- 메인 메뉴 -->
+                <nav class="header_nav" aria-label="주요 메뉴">
+                    <ul class="header_menu">
+                        <li><a href="./mood.html">MOOD</a></li>
+                        <li><a href="./archive.html">ARCHIVE</a></li>
+                        <li><a href="./exhibition.html">EXHIBITION</a></li>
+                        <li><a href="./goods.html">GOODS</a></li>
+                        <li><a href="./mylog.html">MY LOG</a></li>
+                    </ul>
+                </nav>
+
+                <!-- 유틸리티 메뉴 -->
+                <ul class="header_util">
+                    <li>
+                        <a href="#" aria-label="검색">
+                            <img src="./images/index/search.png" alt="icon">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" aria-label="장바구니">
+                            <img src="./images/index/cart.png" alt="icon">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" aria-label="마이페이지">
+                            <img src="./images/index/profile.png" alt="icon">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </header>
+        <!-- ==================== HEADER 끝 ==================== -->
+
+        <main>
+            <!-- ==================== SECTION 1: MAIN VISUAL ==================== -->
+            <section id="main_visual">
+
+                <!-- 메인 비주얼 배경 영상 -->
+                <video class="main_visual_video" autoplay muted loop playsinline preload="auto"
+                    poster="./images/index/visual.png" aria-hidden="true">
+                    <source src="./images/index/visual.mp4" type="video/mp4">
+                </video>
+
+                <!-- 영상 위 콘텐츠 -->
+                <div class="main_visual_inner">
+                    <div class="main_visual_text">
+                        <h2>
+                            Find Your Space<br>
+                            Archive Your Mood
+                        </h2>
+
+                        <p class="main_visual_desc">
+                            지금의 감정에 어울리는 전시와 공간을 발견하고,<br>
+                            그곳에서 마주한 마음과 순간을 기록해보세요.
+                        </p>
+
+                        <!-- 스크롤 안내 -->
+                        <a href="#how_it_works" class="main_visual_scroll">
+                            <span class="main_visual_arrow">
+                                <img src="./images/index/arrow.png" alt="arrow">
+                            </span>
+
+                            <span class="visual_down">SCROLL DOWN</span>
+                        </a>
+                    </div>
+                </div>
+            </section>
+            <!-- ==================== SECTION 1 끝 ==================== -->
+
+            <!-- ==================== SECTION 2: HOW IT WORKS ==================== -->
+            <section id="how_it_works">
+                <div class="how_inner">
+                    <div class="section_title how_title">
+                        <span class="section_eyebrow">HOW IT WORKS</span>
+                        <h2>감정이 공간과 기록으로 이어지는 과정</h2>
+                    </div>
+
+                    <ol class="how_list">
+                        <li class="how_item">
+                            <div class="how_icon">
+                                <img src="./images/index/icon1.png" alt="icon">
+                            </div>
+                            <h3>1. 무드 테스트</h3>
+                            <p>질문에 답하고<br>지금의 감정을 찾아요.</p>
+                        </li>
+
+                        <li class="how_item">
+                            <div class="how_icon">
+                                <img src="./images/index/icon2.png" alt="icon">
+                            </div>
+                            <h3>2. 감정 분석</h3>
+                            <p>선택한 답변을 바탕으로<br>나의 감정 도형과 무드를 발견해요.</p>
+                        </li>
+
+                        <li class="how_item">
+                            <div class="how_icon">
+                                <img src="./images/index/icon3.png" alt="icon">
+                            </div>
+                            <h3>3. 공간 큐레이션</h3>
+                            <p>현재의 감정에 어울리는<br>전시와 공간을 추천받아요.</p>
+                        </li>
+
+                        <li class="how_item">
+                            <div class="how_icon">
+                                <img src="./images/index/icon4.png" alt="icon">
+                            </div>
+                            <h3>4. 나의 기록</h3>
+                            <p>공간을 방문한 뒤 느낀 감정과<br>기억에 남은 순간을 기록해요.</p>
+                        </li>
+                    </ol>
+                </div>
+            </section>
+            <!-- ==================== SECTION 2 끝 ==================== -->
+
+            <!-- ==================== SECTION 3: MOOD & ARCHIVE ==================== -->
+            <section id="mood_archive">
+                <div class="mood_archive_inner">
+                    <!-- MOOD -->
+                    <article class="mood_area">
+                        <div class="content_text mood_text" data-motion="fade-right" data-delay="100">
+                            <span class="section_eyebrow">MOOD</span>
+                            <h2>지금의 감정을<br>발견해보세요</h2>
+                            <p>간단한 질문을 통해<br>오늘의 감정 무드를 알아보세요.</p>
+
+                            <a href="./mood.html" class="round_button dark_button">
+                                <img src="./images/index/button.png" alt="button">
+                                <span>MOOD TEST</span>
+                            </a>
+                        </div>
+
+                        <ul class="mood_card_list" data-motion="card-up" data-delay="200">
+                            <li class="mood_card">
+                                <a href="./mood.html">
+                                    <img src="./images/index/joyful.png" alt="mood">
+                                </a>
+                            </li>
+                            <li class="mood_card">
+                                <a href="./mood.html">
+                                    <img src="./images/index/calm.png" alt="mood">
+                                </a>
+                            </li>
+                            <li class="mood_card">
+                                <a href="./mood.html">
+                                    <img src="./images/index/anxious.png" alt="mood">
+                                </a>
+                            </li>
+                            <li class="mood_card">
+                                <a href="./mood.html">
+                                    <img src="./images/index/empty.png" alt="mood">
+                                </a>
+                            </li>
+                            <li class="mood_card">
+                                <a href="./mood.html">
+                                    <img src="./images/index/reflective.png" alt="mood">
+                                </a>
+                            </li>
+                        </ul>
+                    </article>
+
+                    <!-- ARCHIVE -->
+                    <article class="archive_area">
+                        <div class="content_text archive_text" data-motion="fade-left" data-delay="100">
+                            <span class="section_eyebrow">ARCHIVE</span>
+                            <h2>공간에 남겨진<br>감정을 만나보세요</h2>
+                            <p>사람들이 공간에서 발견한<br>다양한 감정과 순간을 둘러보세요.</p>
+
+                            <a href="./archive.html" class="round_button dark_button">
+                                <img src="./images/index/button.png" alt="button">
+                                <span>VIEW ARCHIVE</span>
+                            </a>
+                        </div>
+
+                        <ul class="archive_card_list" data-motion="card-up" data-delay="200">
+                            <li class="archive_card">
+                                <a href="./archive.html">
+                                    <img src="./images/index/archive1.png" alt="archive">
+                                </a>
+                            </li>
+                            <li class="archive_card">
+                                <a href="./archive.html">
+                                    <img src="./images/index/archive2.png" alt="archive">
+                                </a>
+                            </li>
+                            <li class="archive_card">
+                                <a href="./archive.html">
+                                    <img src="./images/index/archive3.png" alt="archive">
+                                </a>
+                            </li>
+                            <li class="archive_card">
+                                <a href="./archive.html">
+                                    <img src="./images/index/archive4.png" alt="archive">
+                                </a>
+                            </li>
+                        </ul>
+                    </article>
+                </div>
+            </section>
+            <!-- ==================== SECTION 3 끝 ==================== -->
+
+            <!-- ==================================================
+                  SECTION 4: MOOD BANNER
+              =================================================== -->
+            <section id="mood_banner" aria-labelledby="mood_banner_title">
+                <div class="mood_banner_inner" data-motion="blur-up" data-delay="100">
+
+                    <!-- 영문 소제목 -->
+                    <span class="mood_banner_eyebrow">
+                        FROM MOOD TO SPACE
+                    </span>
+
+                    <!-- 메인 제목 -->
+                    <h2 id="mood_banner_title">
+                        감정이 공간으로 이어지는 순간
+                    </h2>
+
+                    <!-- 가운데 선·별 장식 이미지 -->
+                    <img class="mood_banner_deco" src="./images/index/banner_deco.png" alt="banner_deco">
+
+                    <!-- 설명 -->
+                    <p class="mood_banner_desc">
+                        무드 테스트로 발견한 지금의 감정에 따라<br>
+                        나에게 어울리는 전시와 공간을 만나보세요.
+                    </p>
+
+                </div>
+            </section>
+            <!-- SECTION 4 끝 -->
+
+            <!-- ==================== SECTION 5: EXHIBITION ==================== -->
+            <section id="exhibition_curation">
+                <div class="content_text exhibition_inner">
+                    <div class="exhibition_text" data-motion="fade-right" data-delay="100">
+                        <span class="section_eyebrow">EXHIBITION CURATION</span>
+                        <h2>당신의 무드에 어울리는<br>전시를 만나보세요</h2>
+                        <p>감정별 추천부터 현재 진행 중인 전시와 예정 전시까지, <br>
+                            한곳에서 둘러볼 수 있어요.</p>
+
+                        <a href="./exhibition.html" class="round_button light_button">
+                            <img src="./images/index/button2.png" alt="button">
+                            <span>VIEW EXHIBITION</span>
+                        </a>
+                    </div>
+
+                    <a href="./exhibition.html" class="exhibition_image" data-motion="fade-left" data-delay="200">
+                        <img src="./images/index/exhibition.png" alt="exhibition">
+                    </a>
+                </div>
+            </section>
+            <!-- ==================== SECTION 5 끝 ==================== -->
+
+            <!-- ==================== SECTION 6: GOODS & MY LOG ==================== -->
+            <section id="goods_mylog">
+                <div class="goods_mylog_inner">
+                    <!-- GOODS -->
+                    <article class="goods_area">
+                        <div class="content_text goods_text" data-motion="fade-right" data-delay="100">
+                            <span class="section_eyebrow">GOODS</span>
+                            <h2>감정을 닮은 오브제를<br>일상에서 만나보세요</h2>
+                            <p>당신의 감정을 일상 속에서 <br> 오래도록 간직해 보세요.</p>
+
+                            <a href="./goods.html" class="round_button dark_button">
+                                <img src="./images/index/button.png" alt="button">
+                                <span>VIEW COLLECTION</span>
+                            </a>
+                        </div>
+
+                        <ul class="goods_list" data-motion="card-up" data-delay="200">
+                            <li class="goods_item">
+                                <a href="./goods.html">
+                                    <img src="./images/index/case.png" alt="goods">
+                                </a>
+                            </li>
+                            <li class="goods_item">
+                                <a href="./goods.html">
+                                    <img src="./images/index/notes.png" alt="goods">
+                                </a>
+                            </li>
+                            <li class="goods_item">
+                                <a href="./goods.html">
+                                    <img src="./images/index/candle.png" alt="goods">
+                                </a>
+                            </li>
+                            <li class="goods_item">
+                                <a href="./goods.html">
+                                    <img src="./images/index/keyring.png" alt="goods">
+                                </a>
+                            </li>
+                        </ul>
+                    </article>
+
+                    <!-- MY LOG -->
+                    <article class="mylog_area">
+                        <div class="content_text mylog_text" data-motion="fade-left" data-delay="100">
+                            <span class="section_eyebrow">MY LOG</span>
+                            <h2>공간에서 만난 감정을<br>나만의 기록으로<br>남겨보세요</h2>
+                            <p>방문한 전시의 사진과 느낀 감정을 기록하고, <br>나만의 아카이브를 만들어보세요.</p>
+
+                            <a href="./mylog.html" class="round_button dark_button">
+                                <img src="./images/index/button.png" alt="button">
+                                <span>START ARCHIVE</span>
+                            </a>
+                        </div>
+
+                        <ul class="mylog_list" data-motion="card-up" data-delay="200">
+                            <li class="mylog_item">
+                                <a href="./mylog.html">
+                                    <img src="./images/index/log1.png" alt="mylog">
+                                </a>
+                            </li>
+                            <li class="mylog_item">
+                                <a href="./mylog.html">
+                                    <img src="./images/index/log2.png" alt="mylog">
+                                </a>
+                            </li>
+                            <li class="mylog_item">
+                                <a href="./mylog.html">
+                                    <img src="./images/index/log3.png" alt="mylog">
+                                </a>
+                            </li>
+                        </ul>
+                    </article>
+                </div>
+            </section>
+            <!-- ==================== SECTION 6 끝 ==================== -->
+
+            <!-- ==================================================
+                       SECTION 7: NEWSLETTER
+              =================================================== -->
+            <section id="newsletter">
+                <div class="newsletter_inner">
+
+                    <div class="newsletter_info">
+                        <div class="newsletter_icon">
+                            <img src="./images/index/newsletter_deco.png" alt="newsletter">
+                        </div>
+
+                        <div class="newsletter_text">
+                            <h2>새로운 전시와 이벤트 소식을 받아보세요!</h2>
+                            <p>무드카이브의 다양한 소식을 이메일로 받아보세요.</p>
+                        </div>
+                    </div>
+
+                    <form class="newsletter_form" id="newsletter_form">
+                        <label for="newsletter_email" class="blind">
+                            이메일 주소
+                        </label>
+
+                        <input type="email" id="newsletter_email" name="newsletter_email" placeholder="이메일 주소를 입력해 주세요."
+                            required>
+
+                        <button type="submit">
+                            구독하기
+                        </button>
+                    </form>
+
+                </div>
+            </section>
+            <!-- SECTION 7 끝 -->
+
+        </main>
+
+        <!-- ==================== FOOTER ==================== -->
+        <footer id="footer">
+            <div class="footer_inner">
+                <!-- 브랜드 정보 -->
+                <div class="footer_brand">
+                    <a href="./index.html" class="footer_logo">
+                        <img src="./images/index/logo.svg" alt="Moodchive">
+                    </a>
+                    <p>© 2026 Mood Archive. All rights reserved.</p>
+                </div>
+
+                <!-- 푸터 메뉴 -->
+                <nav class="footer_nav" aria-label="푸터 메뉴">
+                    <ul class="footer_menu">
+                        <li><a href="./mood.html">MOOD</a></li>
+                        <li><a href="./archive.html">ARCHIVE</a></li>
+                        <li><a href="./exhibition.html">EXHIBITION</a></li>
+                        <li><a href="./goods.html">GOODS</a></li>
+                        <li><a href="./mylog.html">MY LOG</a></li>
+                    </ul>
+                </nav>
+
+                <!-- 사업자 정보 -->
+                <address class="footer_info">
+                    <p><span>CEO:</span> SUMIN LEE</p>
+                    <p><span>ADDRESS:</span> Seongsu Mood Lab, Seoul</p>
+                    <p><span>MAIL ORDER LICENSE:</span> 2026-SEOUL-1022</p>
+                    <p>
+                        <span>CONTACT:</span>
+                        <a href="mailto:info@moodchive.com">info@moodchive.com</a>
+                    </p>
+                </address>
+            </div>
+        </footer>
+        <!-- ==================== FOOTER 끝 ==================== -->
+
+    </div>
+
+    <script src="https://code.jquery.com/jquery-4.0.0.js"
+        integrity="sha256-9fsHeVnKBvqh3FB2HYu7g2xseAZ5MlN6Kz/qnkASV8U=" crossorigin="anonymous">
+        </script>
+
+    <script>
+        const header = document.querySelector("#header");
+
+        function updateHeaderBackground() {
+            if (window.scrollY > 20) {
+                header.classList.add("scrolled");
+            } else {
+                header.classList.remove("scrolled");
+            }
+        }
+
+        window.addEventListener("scroll", updateHeaderBackground);
+
+        updateHeaderBackground();
+    </script>
+
+    <script src="./js/cursor.js"></script>
+    <script src="./js/motion.js"></script>
+</body>
+
+</html>

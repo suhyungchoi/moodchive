@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="나의 감정 기록과 공간, 스크랩을 한눈에 확인하는 무드카이브 마이로그">
+
+    <title>MOODCHIVE</title>
+
+    <!-- 파비콘 연결 -->
+    <link rel="shortcut icon" href="./images/favicon/favicon.png" type="image/x-icon">
+
+    <!-- 폰트 css -->
+    <link rel="stylesheet" href="./css/font.css">
+
+    <!-- 외부 스타일 css -->
+    <link rel="stylesheet" href="./css/mylog_style.css">
+
+    <!-- 커스텀 커서 css -->
+    <link rel="stylesheet" href="./css/cursor.css">
+</head>
+
+<body>
+    <div id="wrap">
+
+        <!-- ==================== HEADER ==================== -->
+        <header id="header">
+            <div class="header_inner">
+                <h1 class="header_logo">
+                    <a href="./index.html">
+                        <img src="./images/mylog/logo.svg" alt="Moodchive">
+                    </a>
+                </h1>
+
+                <nav class="header_nav" aria-label="주요 메뉴">
+                    <ul class="header_menu">
+                        <li><a href="./mood.html">MOOD</a></li>
+                        <li><a href="./archive.html">ARCHIVE</a></li>
+                        <li><a href="./exhibition.html">EXHIBITION</a></li>
+                        <li><a href="./goods.html">GOODS</a></li>
+                        <li><a href="./mylog.html" aria-current="page">MY LOG</a></li>
+                    </ul>
+                </nav>
+
+                <ul class="header_util">
+                    <li>
+                        <a href="#" aria-label="검색">
+                            <img src="./images/mylog/search.png" alt="icon">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./goods.html" aria-label="장바구니">
+                            <img src="./images/mylog/cart.png" alt="icon">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#profile" aria-label="마이페이지">
+                            <img src="./images/mylog/profile.png" alt="icon">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </header>
+        <!-- ==================== HEADER 끝 ==================== -->
+
+
+        <main id="main">
+            <section class="mylog_section" aria-label="마이 로그 대시보드">
+                <div class="mylog_inner">
+
+                    <!-- ==================== LEFT SIDEBAR ==================== -->
+                    <aside class="mylog_sidebar" aria-label="마이로그 메뉴">
+                        <div class="mylog_sidebar_sticky">
+                            <div class="profile_summary" id="profile">
+                                <div class="profile_avatar">
+                                    <img src="./images/mylog/my_img.png" alt="profile">
+                                </div>
+
+                                <strong class="profile_name">돌멩이</strong>
+                                <span class="profile_id">stone01@gmail.com</span>
+
+                                <a href="#" class="profile_edit_button">프로필 편집</a>
+                            </div>
+
+                            <nav class="sidebar_nav" aria-label="마이로그 세부 메뉴">
+                                <a href="#dashboard" class="sidebar_link active">
+                                    <img src="./images/mylog/icon1.png" alt="icon">
+                                    <span>홈</span>
+                                </a>
+
+                                <a href="#" class="sidebar_link">
+                                    <img src="./images/mylog/icon2.png" alt="icon">
+                                    <span>기록하기</span>
+                                </a>
+
+                                <a href="#emotionHistory" class="sidebar_link">
+                                    <img src="./images/mylog/icon3.png" alt="icon">
+                                    <span>감정 기록</span>
+                                </a>
+
+                                <a href="#visitedSpace" class="sidebar_link">
+                                    <img src="./images/mylog/icon4.png" alt="icon">
+                                    <span>방문한 공간</span>
+                                </a>
+
+                                <a href="#scrapHistory" class="sidebar_link">
+                                    <img src="./images/mylog/icon5.png" alt="icon">
+                                    <span>스크랩 항목</span>
+                                </a>
+
+                                <a href="#report" class="sidebar_link">
+                                    <img src="./images/mylog/icon6.png" alt="icon">
+                                    <span>감정 리포트</span>
+                                </a>
+
+                                <a href="#recommend" class="sidebar_link">
+                                    <img src="./images/mylog/icon7.png" alt="icon">
+                                    <span>맞춤 추천</span>
+                                </a>
+
+                                <a href="#" class="sidebar_link">
+                                    <img src="./images/mylog/icon8.png" alt="icon">
+                                    <span>친구 초대</span>
+                                </a>
+
+                                <a href="#" class="sidebar_link">
+                                    <img src="./images/mylog/icon9.png" alt="icon">
+                                    <span>설정</span>
+                                </a>
+                            </nav>
+
+                            <a href="#" class="sidebar_logout">
+                                <img src="./images/mylog/icon10.png" alt="icon">
+                                <span>로그아웃</span>
+                            </a>
+                        </div>
+                    </aside>
+
+
+                    <!-- ==================== RIGHT CONTENT ==================== -->
+                    <div class="mylog_content" id="dashboard">
+
+                        <!-- 상단 프로필 배너 -->
+                        <section class="dashboard_hero">
+                            <img src="./images/mylog/intro_bg.png" alt="intro_bg" class="dashboard_hero_bg"
+                                aria-hidden="true">
+
+                            <div class="dashboard_hero_text">
+                                <p class="dashboard_greeting">돌멩이 님,</p>
+                                <h2>
+                                    그 공간에서<br>
+                                    어떤 마음을 만났나요?
+                                </h2>
+                                <p class="dashboard_description">
+                                    전시와 공간에서 느낀 감정, <br>오래 기억하고 싶은 순간을 기록해보세요.
+                                </p>
+                            </div>
+
+                            <ul class="dashboard_stats" aria-label="나의 활동 요약">
+                                <li>
+                                    <img src="./images/mylog/intro_icon1.png" alt="icon">
+
+                                    <div class="dashboard_stats_text">
+                                        <strong>24</strong>
+                                        <span>기록한 감정</span>
+                                    </div>
+                                </li>
+
+                                <li>
+                                    <img src="./images/mylog/intro_icon2.png" alt="icon">
+
+                                    <div class="dashboard_stats_text">
+                                        <strong>12</strong>
+                                        <span>방문한 공간</span>
+                                    </div>
+                                </li>
+
+                                <li>
+                                    <img src="./images/mylog/intro_icon3.png" alt="icon">
+
+                                    <div class="dashboard_stats_text">
+                                        <strong>8</strong>
+                                        <span>스크랩한 항목</span>
+                                    </div>
+                                </li>
+                            </ul>
+                        </section>
+
+
+                        <!-- 최근 감정 기록 -->
+                        <section class="dashboard_card emotion_history" id="emotionHistory">
+                            <div class="section_heading">
+                                <h2>최근 감정 기록</h2>
+                                <a href="#" class="view_more_button">
+                                    <span>전체 보기</span>
+                                    <span class="view_more_arrow" aria-hidden="true">→</span>
+                                </a>
+                            </div>
+
+                            <ol class="emotion_timeline">
+                                <li>
+                                    <span class="timeline_dot" aria-hidden="true"></span>
+                                    <img src="./images/mylog/mood_icon4.png" alt="mood_icon">
+                                    <strong>공허한</strong>
+                                    <time datetime="2026-06-01">05.10</time>
+                                </li>
+                                <li>
+                                    <span class="timeline_dot" aria-hidden="true"></span>
+                                    <img src="./images/mylog/mood_icon2.png" alt="mood_icon">
+                                    <strong>평온한</strong>
+                                    <time datetime="2026-05-27">05.01</time>
+                                </li>
+                                <li>
+                                    <span class="timeline_dot" aria-hidden="true"></span>
+                                    <img src="./images/mylog/mood_icon3.png" alt="mood_icon">
+                                    <strong>불안한</strong>
+                                    <time datetime="2026-05-22">04.28</time>
+                                </li>
+                                <li>
+                                    <span class="timeline_dot" aria-hidden="true"></span>
+                                    <img src="./images/mylog/mood_icon2.png" alt="mood_icon">
+                                    <strong>평온한</strong>
+                                    <time datetime="2026-05-17">04.10</time>
+                                </li>
+                                <li>
+                                    <span class="timeline_dot" aria-hidden="true"></span>
+                                    <img src="./images/mylog/mood_icon1.png" alt="mood_icon">
+                                    <strong>행복한</strong>
+                                    <time datetime="2026-05-12">04.08</time>
+                                </li>
+                            </ol>
+                        </section>
+
+
+                        <!-- 방문한 공간 -->
+                        <section class="dashboard_card visited_space" id="visitedSpace">
+                            <div class="section_heading">
+                                <h2>방문한 공간</h2>
+                                <a href="#" class="view_more_button">
+                                    <span>전체 보기</span>
+                                    <span class="view_more_arrow" aria-hidden="true">→</span>
+                                </a>
+                            </div>
+
+                            <ul class="space_grid">
+                                <li class="mini_card">
+                                    <a href="#">
+                                        <div class="mini_card_image">
+                                            <img src="./images/mylog/space_1.png" alt="space">
+                                        </div>
+                                        <div class="mini_card_text">
+                                            <span class="mini_badge">미디어 아트</span>
+                                            <h3>빛의 시어터</h3>
+                                            <p>2026. 05. 10</p>
+                                        </div>
+                                    </a>
+                                </li>
+
+                                <li class="mini_card">
+                                    <a href="#">
+                                        <div class="mini_card_image">
+                                            <img src="./images/mylog/space_2.png" alt="space">
+                                        </div>
+                                        <div class="mini_card_text">
+                                            <span class="mini_badge">설치 전시</span>
+                                            <h3>햇살을 모으는 방</h3>
+                                            <p>2026. 05. 01</p>
+                                        </div>
+                                    </a>
+                                </li>
+
+                                <li class="mini_card">
+                                    <a href="#">
+                                        <div class="mini_card_image">
+                                            <img src="./images/mylog/space_3.png" alt="space">
+                                        </div>
+                                        <div class="mini_card_text">
+                                            <span class="mini_badge">몰입형 전시</span>
+                                            <h3>파란 숨의 방</h3>
+                                            <p>2026. 04. 28</p>
+                                        </div>
+                                    </a>
+                                </li>
+
+                                <li class="mini_card">
+                                    <a href="#">
+                                        <div class="mini_card_image">
+                                            <img src="./images/mylog/space_4.png" alt="space">
+                                        </div>
+                                        <div class="mini_card_text">
+                                            <span class="mini_badge">빛 전시</span>
+                                            <h3>별이 머문 자리</h3>
+                                            <p>2026. 04. 10</p>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </section>
+
+
+                        <!-- 스크랩한 항목 -->
+                        <section class="dashboard_card scrap_history" id="scrapHistory">
+                            <div class="section_heading section_heading_tabs">
+                                <h2>스크랩한 항목</h2>
+                                <a href="#" class="view_more_button">
+                                    <span>전체 보기</span>
+                                    <span class="view_more_arrow" aria-hidden="true">→</span>
+                                </a>
+                            </div>
+
+                            <div class="scrap_tabs" role="tablist" aria-label="스크랩 분류">
+                                <button type="button" class="scrap_tab active" role="tab" aria-selected="true"
+                                    data-tab="all">전체</button>
+                                <button type="button" class="scrap_tab" role="tab" aria-selected="false"
+                                    data-tab="exhibition">전시</button>
+                                <button type="button" class="scrap_tab" role="tab" aria-selected="false"
+                                    data-tab="goods">굿즈</button>
+                                <button type="button" class="scrap_tab" role="tab" aria-selected="false" data-tab="all">저장한 기록</button>
+                            </div>
+
+                            <ul class="scrap_grid">
+                                <li class="mini_card scrap_item" data-category="exhibition">
+                                    <a href="#">
+                                        <div class="mini_card_image">
+                                            <img src="./images/mylog/scrap_1.png" alt="scrap">
+                                        </div>
+                                        <div class="mini_card_text">
+                                            <span class="mini_badge">전시</span>
+                                            <h3>익명의 감정들</h3>
+                                        </div>
+                                    </a>
+                                </li>
+
+                                <li class="mini_card scrap_item" data-category="goods">
+                                    <a href="#">
+                                        <div class="mini_card_image object_image">
+                                            <img src="./images/mylog/scrap_2.png" alt="Record Mug Pink">
+                                        </div>
+                                        <div class="mini_card_text">
+                                            <span class="mini_badge">굿즈</span>
+                                            <h3>Record Mug (pink)</h3>
+                                        </div>
+                                    </a>
+                                </li>
+
+                                <li class="mini_card scrap_item" data-category="goods">
+                                    <a href="#">
+                                        <div class="mini_card_image object_image">
+                                            <img src="./images/mylog/scrap_3.png" alt="Masking Tape Set">
+                                        </div>
+                                        <div class="mini_card_text">
+                                            <span class="mini_badge">굿즈</span>
+                                            <h3>Masking Tape Set</h3>
+                                        </div>
+                                    </a>
+                                </li>
+
+                                <li class="mini_card scrap_item" data-category="exhibition">
+                                    <a href="#">
+                                        <div class="mini_card_image">
+                                            <img src="./images/mylog/scrap_4.png" alt="scrap">
+                                        </div>
+                                        <div class="mini_card_text">
+                                            <span class="mini_badge">전시</span>
+                                            <h3>기쁨의 조각들</h3>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </section>
+
+
+                        <!-- 감정 리포트 -->
+                        <section class="dashboard_card mood_report" id="report">
+                            <div class="section_heading">
+                                <h2>감정 리포트</h2>
+                                <span class="report_period">지난 일주일 대비</span>
+                            </div>
+
+                            <div class="report_layout">
+                                <div class="report_intro">
+                                    <p>
+                                        돌멩이 님은 최근<br>
+                                        <strong>평온한</strong> 감정을 가장 많이<br>
+                                        느끼고 있어요
+                                    </p>
+                                    <span>지난 일주일간의 감정 추이를 분석했어요.</span>
+                                    <a href="#">상세 리포트 보기</a>
+                                </div>
+
+                                <ul class="report_chart">
+                                    <li>
+                                        <img src="./images/mylog/mood_icon2.png" alt="mood_icon">
+                                        <span class="report_label">평온한</span>
+                                        <div class="report_track"><span style="--value: 52%;"></span></div>
+                                        <strong>52%</strong>
+                                    </li>
+                                    <li>
+                                        <img src="./images/mylog/mood_icon1.png" alt="mood_icon">
+                                        <span class="report_label">행복한</span>
+                                        <div class="report_track"><span style="--value: 28%;"></span></div>
+                                        <strong>28%</strong>
+                                    </li>
+                                    <li>
+                                        <img src="./images/mylog/mood_icon4.png" alt="mood_icon">
+                                        <span class="report_label">공허한</span>
+                                        <div class="report_track"><span style="--value: 12%;"></span></div>
+                                        <strong>12%</strong>
+                                    </li>
+                                    <li>
+                                        <img src="./images/mylog/mood_icon5.png" alt="mood_icon">
+                                        <span class="report_label">여백의</span>
+                                        <div class="report_track"><span style="--value: 5%;"></span></div>
+                                        <strong>5%</strong>
+                                    </li>
+                                    <li>
+                                        <img src="./images/mylog/mood_icon3.png" alt="mood_icon">
+                                        <span class="report_label">불안한</span>
+                                        <div class="report_track"><span style="--value: 3%;"></span></div>
+                                        <strong>3%</strong>
+                                    </li>
+                                </ul>
+                            </div>
+                        </section>
+
+                        <!-- 추천 -->
+                        <section class="dashboard_card recommendation" id="recommend">
+                            <div class="section_heading">
+                                <h2>돌멩이 님을 위한 추천</h2>
+                            </div>
+
+                            <div class="recommend_grid">
+
+                                <!-- 추천 공간 -->
+                                <article class="recommend_panel">
+                                    <div class="recommend_panel_heading">
+                                        <h3>당신에게 어울리는 공간</h3>
+
+                                        <a href="./exhibition.html" class="recommend_more">
+                                            더 보기
+                                            <span aria-hidden="true">→</span>
+                                        </a>
+                                    </div>
+
+                                    <ul class="recommend_items">
+                                        <li>
+                                            <a href="#">
+                                                <div class="recommend_image">
+                                                    <img src="./images/mylog/rc_1.png" alt="recommend">
+                                                </div>
+
+                                                <strong class="recommend_name">
+                                                    안개가 머무는 곳
+                                                </strong>
+
+                                                <span class="recommend_badge">
+                                                    몽환적인
+                                                </span>
+                                            </a>
+                                        </li>
+
+                                        <li>
+                                            <a href="#">
+                                                <div class="recommend_image">
+                                                    <img src="./images/mylog/rc_2.png" alt="recommend">
+                                                </div>
+
+                                                <strong class="recommend_name">
+                                                    오후 네 시의 정원
+                                                </strong>
+
+                                                <span class="recommend_badge">
+                                                    평온한
+                                                </span>
+                                            </a>
+                                        </li>
+
+                                        <li>
+                                            <a href="#">
+                                                <div class="recommend_image">
+                                                    <img src="./images/mylog/rc_3.png" alt="recommend">
+                                                </div>
+
+                                                <strong class="recommend_name">
+                                                    잔잔한 파동
+                                                </strong>
+
+                                                <span class="recommend_badge">
+                                                    몰입형
+                                                </span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </article>
+
+                                <!-- 추천 오브제 -->
+                                <article class="recommend_panel">
+                                    <div class="recommend_panel_heading">
+                                        <h3>당신에게 어울리는 오브제</h3>
+
+                                        <a href="./goods.html" class="recommend_more">
+                                            더 보기
+                                            <span aria-hidden="true">→</span>
+                                        </a>
+                                    </div>
+
+                                    <ul class="recommend_items product_items">
+                                        <li>
+                                            <a href="#">
+                                                <div class="recommend_image">
+                                                    <img src="./images/mylog/rc_4.png" alt="Moment Keyring">
+                                                </div>
+
+                                                <strong class="recommend_name">
+                                                    Moment Keyring<br>
+                                                    (pink)
+                                                </strong>
+                                            </a>
+                                        </li>
+
+                                        <li>
+                                            <a href="#">
+                                                <div class="recommend_image">
+                                                    <img src="./images/mylog/rc_5.png" alt="Archive Notes">
+                                                </div>
+
+                                                <strong class="recommend_name">
+                                                    Archive Notes<br>
+                                                    (blue)
+                                                </strong>
+                                            </a>
+                                        </li>
+
+                                        <li>
+                                            <a href="#">
+                                                <div class="recommend_image">
+                                                    <img src="./images/mylog/rc_6.png" alt="Mood Candle">
+                                                </div>
+
+                                                <strong class="recommend_name">
+                                                    Mood Candle
+                                                </strong>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </article>
+
+                            </div>
+                        </section>
+
+
+
+                    </div>
+                </div>
+            </section>
+        </main>
+
+
+        <!-- ==================== FOOTER ==================== -->
+        <footer id="footer">
+            <div class="footer_inner">
+                <!-- 브랜드 정보 -->
+                <div class="footer_brand">
+                    <a href="./index.html" class="footer_logo">
+                        <img src="./images/index/logo.svg" alt="Moodchive">
+                    </a>
+                    <p>© 2026 Mood Archive. All rights reserved.</p>
+                </div>
+
+                <!-- 푸터 메뉴 -->
+                <nav class="footer_nav" aria-label="푸터 메뉴">
+                    <ul class="footer_menu">
+                        <li><a href="./mood.html">MOOD</a></li>
+                        <li><a href="./archive.html">ARCHIVE</a></li>
+                        <li><a href="./exhibition.html">EXHIBITION</a></li>
+                        <li><a href="./goods.html">GOODS</a></li>
+                        <li><a href="./mylog.html">MY LOG</a></li>
+                    </ul>
+                </nav>
+
+                <!-- 사업자 정보 -->
+                <address class="footer_info">
+                    <p><span>CEO:</span> SUMIN LEE</p>
+                    <p><span>ADDRESS:</span> Seongsu Mood Lab, Seoul</p>
+                    <p><span>MAIL ORDER LICENSE:</span> 2026-SEOUL-1022</p>
+                    <p>
+                        <span>CONTACT:</span>
+                        <a href="mailto:info@moodchive.com">info@moodchive.com</a>
+                    </p>
+                </address>
+            </div>
+        </footer>
+        <!-- ==================== FOOTER 끝 ==================== -->
+
+    </div>
+
+    <script src="https://code.jquery.com/jquery-4.0.0.js"
+        integrity="sha256-9fsHeVnKBvqh3FB2HYu7g2xseAZ5MlN6Kz/qnkASV8U=" crossorigin="anonymous">
+        </script>
+
+    <script>
+        const header = document.querySelector("#header");
+
+        function updateHeaderBackground() {
+            if (window.scrollY > 20) {
+                header.classList.add("scrolled");
+            } else {
+                header.classList.remove("scrolled");
+            }
+        }
+
+        window.addEventListener("scroll", updateHeaderBackground);
+
+        updateHeaderBackground();
+
+        const scrapTabs = document.querySelectorAll('.scrap_tab');
+        const scrapItems = document.querySelectorAll('.scrap_item');
+
+        scrapTabs.forEach((tab) => {
+            tab.addEventListener('click', () => {
+                const selectedCategory = tab.dataset.tab;
+
+                scrapTabs.forEach((item) => {
+                    const isSelected = item === tab;
+                    item.classList.toggle('active', isSelected);
+                    item.setAttribute('aria-selected', String(isSelected));
+                });
+
+                scrapItems.forEach((item) => {
+                    const shouldShow = selectedCategory === 'all' || item.dataset.category === selectedCategory;
+                    item.hidden = !shouldShow;
+                });
+            });
+        });
+
+        const sidebarLinks = document.querySelectorAll('.sidebar_link[href^="#"]');
+        const targetSections = [...sidebarLinks]
+            .map((link) => document.querySelector(link.getAttribute('href')))
+            .filter(Boolean);
+
+        const sectionObserver = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (!entry.isIntersecting) return;
+
+                sidebarLinks.forEach((link) => {
+                    link.classList.toggle('active', link.getAttribute('href') === `#${entry.target.id}`);
+                });
+            });
+        }, {
+            rootMargin: '-35% 0px -55% 0px',
+            threshold: 0
+        });
+
+        targetSections.forEach((section) => sectionObserver.observe(section));
+    </script>
+
+    <script src="./js/cursor.js"></script>
+</body>
+
+</html>
