@@ -1,0 +1,2055 @@
+@charset "UTF-8";
+
+/* =========================================================
+   1. RESET / BASE
+========================================================= */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-width: 320px;
+
+    color: #333333;
+
+    background:
+        radial-gradient(circle at 8% 12%,
+            rgba(255, 202, 239, 0.48) 0%,
+            rgba(255, 202, 239, 0) 34%),
+        radial-gradient(circle at 92% 28%,
+            rgba(181, 200, 255, 0.52) 0%,
+            rgba(181, 200, 255, 0) 37%),
+        radial-gradient(circle at 14% 58%,
+            rgba(216, 186, 255, 0.45) 0%,
+            rgba(216, 186, 255, 0) 35%),
+        radial-gradient(circle at 86% 78%,
+            rgba(255, 220, 174, 0.34) 0%,
+            rgba(255, 220, 174, 0) 34%),
+        linear-gradient(180deg,
+            #F8F0FF 0%,
+            #F1E9FF 35%,
+            #F7EEFF 68%,
+            #EEE7FF 100%);
+
+    background-attachment: fixed;
+
+    font-family: "Pretendard", "Noto Sans KR", Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    word-break: keep-all;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button {
+    color: inherit;
+    border: 0;
+    background: transparent;
+    font: inherit;
+    cursor: pointer;
+}
+
+address {
+    font-style: normal;
+}
+
+#wrap {
+    width: 100%;
+    min-width: 320px;
+    overflow-x: clip;
+}
+
+[hidden] {
+    display: none !important;
+}
+
+
+/* =========================================================
+   2. DESIGN VARIABLES
+========================================================= */
+:root {
+    --page-width: 1920px;
+    --wide-inner-width: 1320px;
+    --side-padding: 40px;
+
+    --sidebar-width: 220px;
+    --content-width: 1040px;
+    --layout-gap: 60px;
+
+    --page-bg: #F5EBFF;
+    --panel-bg: rgba(255, 255, 255, 0.78);
+    --white: #FFFFFF;
+    --text-main: #635770;
+    --text-dark: #333333;
+    --text-light: #958A9F;
+    --line: rgba(99, 87, 112, 0.12);
+
+    --panel-radius: 20px;
+    --small-radius: 14px;
+    --panel-shadow: 0 4px 3px rgba(99, 87, 112, 0.18);
+}
+
+
+/* =========================================================
+   3. COMMON LAYOUT
+========================================================= */
+.header_inner,
+.mylog_inner,
+.footer_inner {
+    width: min(var(--wide-inner-width), calc(100% - (var(--side-padding) * 2)));
+    margin: 0 auto;
+}
+
+.mylog_section {
+    width: 100%;
+    max-width: var(--page-width);
+    margin: 0 auto;
+}
+
+#dashboard,
+#emotionHistory,
+#visitedSpace,
+#scrapHistory,
+#report,
+#recommend {
+    scroll-margin-top: 122px;
+}
+
+/* 공통 카드 */
+.dashboard_card {
+    overflow: hidden;
+    border: 1px solid rgba(99, 87, 112, 0.06);
+    border-radius: var(--panel-radius);
+    background-color: var(--panel-bg);
+    box-shadow: var(--panel-shadow);
+}
+
+/* 인트로 카드 */
+.dashboard_hero {
+    overflow: hidden;
+    border-radius: var(--panel-radius);
+    box-shadow: var(--panel-shadow);
+}
+
+.section_heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.section_heading h2 {
+    color: var(--text-main);
+
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 1.3;
+    letter-spacing: -0.035em;
+}
+
+
+.report_period {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 80px;
+    height: 28px;
+    padding: 0 14px;
+    border: 1px solid rgba(99, 87, 112, 0.18);
+    border-radius: 20px;
+    color: var(--text-main);
+    background-color: rgba(255, 255, 255, 0.42);
+    font-size: 11px;
+}
+
+
+/* 이미지형 전체 보기 버튼 */
+.view_more_button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+
+    width: 135px;
+    height: 67px;
+    margin-top: -10px;
+
+    color: #635770;
+
+    background:
+        transparent url("../images/mylog/button2.png") center / 100% 100% no-repeat;
+
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1;
+    letter-spacing: -0.025em;
+
+    transition:
+        transform 0.2s ease,
+        filter 0.2s ease;
+}
+
+.view_more_arrow {
+    display: inline-block;
+
+    font-size: 16px;
+    line-height: 1;
+
+    transition: transform 0.2s ease;
+}
+
+.view_more_button:hover,
+.view_more_button:focus-visible {
+    transform: translateY(-2px);
+
+    filter:
+        brightness(1.03) drop-shadow(0 6px 8px rgba(99, 87, 112, 0.15));
+}
+
+.view_more_button:hover .view_more_arrow,
+.view_more_button:focus-visible .view_more_arrow {
+    transform: translateX(3px);
+}
+
+.view_more_button:active {
+    transform: translateY(0) scale(0.98);
+}
+
+.view_more_button:focus-visible {
+    outline: 2px solid rgba(99, 87, 112, 0.35);
+    outline-offset: 3px;
+}
+
+
+
+
+
+
+
+/* =========================================================
+   4. HEADER
+========================================================= */
+#header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+
+    width: 100%;
+    height: 92px;
+
+    /* 처음에는 배경 없음 */
+    background-color: transparent;
+    border-bottom: 1px solid transparent;
+    box-shadow: none;
+
+    transition:
+        background-color 0.3s ease,
+        backdrop-filter 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+/* 스크롤했을 때 */
+#header.scrolled {
+    background-color: rgba(250, 247, 255, 0.82);
+
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+
+    border-bottom-color: rgba(99, 87, 112, 0.08);
+
+    box-shadow: 0 4px 18px rgba(82, 69, 103, 0.06);
+}
+
+.header_inner {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    height: 100%;
+}
+
+.header_logo {
+    justify-self: start;
+}
+
+.header_logo a {
+    display: block;
+}
+
+.header_logo img {
+    width: 180px;
+}
+
+.header_nav {
+    justify-self: center;
+}
+
+.header_menu {
+    display: flex;
+    align-items: center;
+    gap: 70px;
+}
+
+.header_menu a {
+    position: relative;
+    display: block;
+    padding: 8px 0;
+    color: var(--text-main);
+    font-family: "SlowGothic", sans-serif;
+    font-size: 17px;
+    letter-spacing: 0.03em;
+    white-space: nowrap;
+}
+
+.header_menu a::after {
+    position: absolute;
+    right: 50%;
+    bottom: 0;
+    left: 50%;
+    height: 1px;
+    background-color: rgba(99, 87, 112, 0.58);
+    content: "";
+    transition: right 0.24s ease, left 0.24s ease;
+}
+
+.header_menu a:hover::after,
+.header_menu a:focus-visible::after,
+.header_menu a[aria-current="page"]::after {
+    right: 0;
+    left: 0;
+}
+
+.header_util {
+    display: flex;
+    align-items: center;
+    justify-self: end;
+    gap: 20px;
+}
+
+.header_util a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 22px;
+    height: 22px;
+}
+
+.header_util img {
+    width: 22px;
+    height: 22px;
+    object-fit: contain;
+}
+
+
+/* =========================================================
+   5. DASHBOARD LAYOUT
+========================================================= */
+.mylog_section {
+    padding-top: 130px;
+}
+
+.mylog_inner {
+    display: grid;
+    grid-template-columns: var(--sidebar-width) minmax(0, var(--content-width));
+    align-items: start;
+    gap: var(--layout-gap);
+}
+
+.mylog_sidebar {
+    align-self: stretch;
+    min-width: 0;
+}
+
+.mylog_sidebar_sticky {
+    position: sticky;
+    top: 122px;
+    display: flex;
+    flex-direction: column;
+    min-height: 750px;
+    padding: 32px 24px 28px;
+    border: 1px solid rgba(99, 87, 112, 0.06);
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.76);
+    box-shadow: var(--panel-shadow);
+}
+
+.mylog_content {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    min-width: 0;
+}
+
+
+/* =========================================================
+   6. SIDEBAR
+========================================================= */
+.profile_summary {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.profile_avatar {
+    width: 96px;
+    height: 96px;
+    overflow: hidden;
+    border-radius: 50%;
+    background-color: #EDE6F3;
+}
+
+.profile_avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.profile_name {
+    margin-top: 18px;
+    color: var(--text-dark);
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.profile_id {
+    margin-top: 7px;
+    color: var(--text-light);
+    font-size: 11px;
+}
+
+.profile_edit_button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 140px;
+    height: 68px;
+    margin-top: -5px;
+    padding: 0 0 2px;
+
+    border: 0;
+    border-radius: 0;
+
+    color: #FFFFFF;
+    background:
+        transparent url("../images/mylog/button.png") center / 100% 100% no-repeat;
+
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1;
+    letter-spacing: -0.02em;
+    text-shadow: 0 1px 2px rgba(62, 38, 82, 0.45);
+
+    transition:
+        transform 0.2s ease,
+        filter 0.2s ease;
+}
+
+.profile_edit_button:hover,
+.profile_edit_button:focus-visible {
+    transform: translateY(-2px);
+    filter: brightness(1.06) drop-shadow(0 6px 8px rgba(99, 87, 112, 0.2));
+}
+
+.profile_edit_button:active {
+    transform: translateY(0) scale(0.98);
+}
+
+.profile_edit_button:focus-visible {
+    outline: 2px solid rgba(99, 87, 112, 0.45);
+    outline-offset: 3px;
+}
+
+.sidebar_nav {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-top: 20px;
+}
+
+.sidebar_link,
+.sidebar_logout {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    min-height: 42px;
+    padding: 0 12px;
+    border-radius: 12px;
+    color: var(--text-main);
+    font-size: 13px;
+    font-weight: 500;
+    transition: color 0.2s ease, background-color 0.2s ease, transform 0.2s ease;
+}
+
+.sidebar_link img,
+.sidebar_logout img {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+}
+
+.sidebar_link:hover,
+.sidebar_link:focus-visible,
+.sidebar_link.active {
+    background-color: rgba(190, 154, 230, 0.13);
+    transform: translateX(3px);
+}
+
+.sidebar_logout {
+    margin-top: auto;
+}
+
+.sidebar_logout:hover,
+.sidebar_logout:focus-visible {
+    background-color: rgba(190, 154, 230, 0.13);
+}
+
+
+/* =========================================================
+   7. TOP HERO
+========================================================= */
+.dashboard_hero {
+    position: relative;
+    min-height: 430px;
+    padding: 58px 72px 48px;
+}
+
+.dashboard_hero_bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.dashboard_hero_text,
+.dashboard_stats {
+    position: relative;
+    z-index: 1;
+}
+
+.dashboard_greeting {
+    color: var(--text-main);
+    font-size: 20px;
+    line-height: 1.6;
+}
+
+.dashboard_hero_text h2 {
+    margin-top: 6px;
+    color: var(--text-main);
+    font-size: 38px;
+    font-weight: 400;
+    line-height: 1.42;
+    letter-spacing: -0.055em;
+}
+
+.dashboard_description {
+    margin-top: 28px;
+    color: var(--text-main);
+    font-size: 15px;
+    line-height: 1.75;
+}
+
+.dashboard_stats {
+    display: flex;
+    gap: 14px;
+    margin-top: 58px;
+}
+
+
+.dashboard_stats li {
+    display: grid;
+    grid-template-columns: 70px minmax(0, 1fr);
+    align-items: center;
+    column-gap: 1px;
+
+    min-height: 90px;
+    padding: 15px 20px;
+
+    border-radius: 15px;
+    background-color: rgba(255, 255, 255, 0.8);
+
+    box-shadow:
+        0 4px 2px rgba(99, 87, 112, 0.16),
+        0 8px 14px rgba(99, 87, 112, 0.06);
+}
+
+/* 아이콘 */
+.dashboard_stats img {
+    display: block;
+    justify-self: center;
+
+    width: 60px;
+    height: 60px;
+    margin: 0;
+
+    object-fit: contain;
+    margin-left: -10px;
+}
+
+/* 숫자와 설명을 하나의 중심축으로 정렬 */
+.dashboard_stats_text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    width: 100%;
+    text-align: center;
+}
+
+/* 숫자 */
+.dashboard_stats strong {
+    display: block;
+
+    width: 100%;
+    margin: 0;
+
+    color: var(--text-main);
+
+    font-family: "SlowGothic", sans-serif;
+    font-size: 23px;
+    font-weight: 400;
+    line-height: 1;
+    text-align: center;
+}
+
+/* 설명 */
+.dashboard_stats span {
+    display: block;
+
+    width: 100%;
+    margin: 0;
+
+    color: var(--text-main);
+
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 1.2;
+    text-align: center;
+    white-space: nowrap;
+}
+
+
+
+/* =========================================================
+   8. EMOTION TIMELINE
+========================================================= */
+.emotion_history {
+    padding: 20px 42px 40px;
+}
+
+
+.emotion_timeline {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    margin-top: 32px;
+}
+
+.emotion_timeline::before {
+    position: absolute;
+    top: 3px;
+    right: 9%;
+    left: 9%;
+    height: 1px;
+    background-color: rgba(99, 87, 112, 0.341);
+    content: "";
+}
+
+.emotion_timeline li {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.timeline_dot {
+    position: relative;
+    z-index: 1;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background-color: var(--text-main);
+}
+
+.emotion_timeline img {
+    width: 80px;
+    height: 80px;
+    margin-top: 23px;
+    object-fit: contain;
+}
+
+.emotion_timeline strong {
+    margin-top: 10px;
+    color: var(--text-dark);
+    font-size: 15px;
+    font-weight: 400;
+}
+
+.emotion_timeline time {
+    margin-top: 5px;
+    color: #666;
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   9. MINI CARDS
+========================================================= */
+.visited_space,
+.scrap_history {
+    padding: 20px 42px 40px;
+}
+
+.space_grid,
+.scrap_grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 26px;
+    margin-top: 28px;
+}
+
+.mini_card {
+    min-width: 0;
+    overflow: hidden;
+    border: 1px solid rgba(99, 87, 112, 0.08);
+    border-radius: 14px;
+    background-color: #FFFFFF;
+    box-shadow: 0 3px 8px rgba(99, 87, 112, 0.08);
+    transition: transform 0.22s ease, box-shadow 0.22s ease;
+}
+
+.mini_card:hover,
+.mini_card:focus-within {
+    transform: translateY(-4px);
+    box-shadow: 0 11px 20px rgba(99, 87, 112, 0.13);
+}
+
+.mini_card_image {
+    height: 158px;
+    overflow: hidden;
+    background-color: #EFEFEF;
+}
+
+.mini_card_image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.35s ease;
+}
+
+.mini_card:hover .mini_card_image img {
+    transform: scale(1.035);
+}
+
+.object_image img {
+    object-fit: contain;
+    padding: 13px;
+}
+
+.mini_card_text {
+    min-height: 88px;
+    padding: 12px 14px 14px;
+    margin-left: 4px;
+}
+
+.mini_badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 42px;
+    height: 18px;
+    padding: 0 9px;
+    border-radius: 20px;
+    color: #FFFFFF;
+    background-color: var(--text-main);
+    font-size: 9px;
+}
+
+.mini_card_text h3 {
+    margin-top: 8px;
+    margin-left: 2px;
+    overflow: hidden;
+    color: var(--text-dark);
+    font-size: 14px;
+    font-weight: 500;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.mini_card_text p {
+    margin-top: 6px;
+    margin-left: 2px;
+    color: var(--text-light);
+    font-size: 11px;
+}
+
+
+/* =========================================================
+   10. SCRAP TABS
+========================================================= */
+.scrap_tabs {
+    display: flex;
+    align-items: center;
+    gap: 54px;
+    margin-top: 22px;
+    padding: 0 12px 11px;
+    border-bottom: 1px solid rgba(99, 87, 112, 0.12);
+}
+
+.scrap_tab {
+    position: relative;
+    color: var(--text-main);
+    font-size: 15px;
+}
+
+.scrap_tab::after {
+    position: absolute;
+    right: 50%;
+    bottom: -12px;
+    left: 50%;
+    height: 2px;
+    background-color: var(--text-main);
+    content: "";
+    transition: right 0.2s ease, left 0.2s ease;
+}
+
+.scrap_tab.active {
+    font-weight: 600;
+}
+
+.scrap_tab.active::after {
+    right: 0;
+    left: 0;
+}
+
+.scrap_grid {
+    margin-top: 28px;
+}
+
+
+/* =========================================================
+   11. MOOD REPORT
+========================================================= */
+.mood_report {
+    padding: 32px 42px 40px;
+}
+
+.report_layout {
+    display: grid;
+    grid-template-columns: 260px minmax(0, 1fr);
+    gap: 52px;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.report_intro p {
+    color: var(--text-main);
+    font-size: 25px;
+    line-height: 1.55;
+    letter-spacing: -0.04em;
+}
+
+.report_intro p strong {
+    color: #9AB0ED;
+    font-weight: 600;
+}
+
+.report_intro>span {
+    display: block;
+    margin-top: 15px;
+    color: #333;
+    font-size: 13px;
+    line-height: 1.55;
+}
+
+/* 상세 리포트 버튼 */
+.report_intro>a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 148px;
+    height: 70px;
+    min-width: 0;
+    margin-left: -16px;
+    padding: 0 0 2px;
+
+    border: 0;
+    border-radius: 0;
+
+    color: var(--text-main);
+
+    background:
+        transparent url("../images/mylog/button2.png") center / 100% 100% no-repeat;
+
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1;
+    letter-spacing: -0.025em;
+
+    transition:
+        transform 0.2s ease,
+        filter 0.2s ease;
+}
+
+.report_intro>a:hover,
+.report_intro>a:focus-visible {
+    transform: translateY(-2px);
+
+    filter:
+        brightness(1.03) drop-shadow(0 6px 8px rgba(99, 87, 112, 0.15));
+}
+
+.report_intro>a:active {
+    transform: translateY(0) scale(0.98);
+}
+
+.report_intro>a:focus-visible {
+    outline: 2px solid rgba(99, 87, 112, 0.35);
+    outline-offset: 3px;
+}
+
+/* 리포트 차트 */
+.report_chart {
+    display: flex;
+    flex-direction: column;
+    gap: 17px;
+    padding: 24px 28px;
+    border: 1px solid rgba(99, 87, 112, 0.2);
+    border-radius: 16px;
+    background-color: rgba(255, 255, 255);
+}
+
+.report_chart li {
+    display: grid;
+    grid-template-columns: 34px 60px minmax(0, 1fr) 38px;
+    align-items: center;
+    gap: 12px;
+}
+
+.report_chart img {
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
+}
+
+.report_label {
+    color: var(--text-main);
+    font-size: 15px;
+}
+
+.report_track {
+    height: 9px;
+    overflow: hidden;
+    border-radius: 20px;
+    background-color: #EEEAF2;
+}
+
+.report_track span {
+    display: block;
+    width: var(--value);
+    height: 100%;
+    border-radius: inherit;
+    background-color: #9AB0ED;
+}
+
+.report_chart li:nth-child(2) .report_track span {
+    background-color: #FF7BBD;
+}
+
+.report_chart li:nth-child(3) .report_track span {
+    background-color: #B4D6AA;
+}
+
+.report_chart li:nth-child(4) .report_track span {
+    background-color: #C0A6FF;
+}
+
+.report_chart li:nth-child(5) .report_track span {
+    background-color: #FFAB6C;
+}
+
+.report_chart strong {
+    color: var(--text-main);
+    font-size: 13px;
+    font-weight: 500;
+    text-align: right;
+}
+
+
+/* =========================================================
+   12. RECOMMENDATION
+========================================================= */
+
+/* 다른 대시보드 카드와 동일한 내부 여백 */
+.recommendation {
+    padding: 30px 42px 40px;
+}
+
+/* 두 개의 추천 패널 */
+.recommend_grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 34px;
+
+    /* 다른 섹션 콘텐츠와 동일한 제목 아래 간격 */
+    margin-top: 28px;
+}
+
+/* 추천 내부 흰색 패널 */
+.recommend_panel {
+    min-width: 0;
+    padding: 20px;
+
+    border: 1px solid rgba(99, 87, 112, 0.05);
+    border-radius: 16px;
+
+    background-color: #FFFFFF;
+
+    box-shadow:
+        0 3px 1px rgba(99, 87, 112, 0.16),
+        0 8px 18px rgba(99, 87, 112, 0.06);
+}
+
+/* 패널 상단 제목 */
+.recommend_panel_heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.recommend_panel_heading h3 {
+    color: var(--text-dark);
+
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.4;
+    letter-spacing: -0.025em;
+}
+
+/* 더 보기 */
+.recommend_more {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    flex-shrink: 0;
+
+    color: #666;
+
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 1;
+    white-space: nowrap;
+}
+
+.recommend_more span {
+    display: inline-block;
+
+    font-size: 14px;
+    line-height: 1;
+
+    transition: transform 0.2s ease;
+}
+
+.recommend_more:hover span,
+.recommend_more:focus-visible span {
+    transform: translateX(3px);
+}
+
+/* 추천 아이템 */
+.recommend_items {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 14px;
+
+    margin-top: 18px;
+}
+
+.recommend_items strong {
+    font-size: 13px;
+    color: #333;
+}
+
+.recommend_items li {
+    min-width: 0;
+}
+
+.recommend_items li>a {
+    display: block;
+}
+
+/* 이미지 영역 */
+.recommend_image {
+    width: 100%;
+    height: 120px;
+
+    overflow: hidden;
+
+    border-radius: 10px;
+    background-color: #F0F0F0;
+}
+
+.recommend_image img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition: transform 0.3s ease;
+}
+
+.recommend_items a:hover .recommend_image img {
+    transform: scale(1.035);
+}
+
+/* 상품 이미지는 잘리지 않도록 */
+.product_items .recommend_image img {
+    padding: 9px;
+
+    object-fit: contain;
+}
+
+/* 상품 및 공간 이름 */
+.recommend_name {
+    display: block;
+
+    margin-top: 8px;
+
+    overflow: hidden;
+
+    color: var(--text-main);
+
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 1.45;
+    letter-spacing: -0.025em;
+
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* 상품명은 두 줄 사용 */
+.product_items .recommend_name {
+    min-height: 32px;
+
+    white-space: normal;
+}
+
+/* 공간 감정 태그 */
+.recommend_badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-width: 42px;
+    height: 18px;
+    margin-top: 6px;
+    padding: 0 9px;
+
+    border-radius: 20px;
+
+    color: #FFFFFF;
+    background-color: var(--text-main);
+
+    font-size: 10px;
+    font-weight: 300;
+    line-height: 1;
+}
+
+
+/* =========================================================
+   13. FOOTER
+========================================================= */
+#footer {
+    font-family: "SlowGothic", sans-serif;
+}
+
+.footer_inner {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+
+    min-height: auto;
+    padding: 100px 0 25px;
+}
+
+/* 푸터 브랜드 */
+.footer_brand {
+    justify-self: start;
+}
+
+.footer_logo {
+    display: block;
+    width: 200px;
+    margin-bottom: 18px;
+}
+
+.footer_brand>p {
+    color: var(--text-main);
+    font-size: 13px;
+}
+
+/* 푸터 메뉴 */
+.footer_nav {
+    justify-self: center;
+}
+
+.footer_menu {
+    display: flex;
+    align-items: center;
+    gap: 65px;
+    margin-top: 50px;
+}
+
+.footer_menu a {
+    color: var(--text-main);
+    font-size: 15px;
+}
+
+/* 푸터 사업자 정보 */
+.footer_info {
+    justify-self: end;
+    color: var(--text-main);
+    font-size: 13px;
+    line-height: 1.75;
+    text-align: right;
+}
+
+.footer_info a:hover {
+    text-decoration: underline;
+}
+
+
+/* ---------------------- 반응형 ------------------- */
+/* =========================================================
+   14. RESPONSIVE 1280
+========================================================= */
+@media (max-width: 1280px) {
+    :root {
+        --side-padding: 34px;
+        --sidebar-width: 200px;
+        --layout-gap: 40px;
+    }
+
+    .header_menu {
+        gap: 45px;
+    }
+
+    .header_menu a {
+        font-size: 15px;
+    }
+
+    .header_logo img {
+        width: 165px;
+    }
+
+    .mylog_sidebar_sticky {
+        padding: 28px 20px 26px;
+    }
+
+    .dashboard_hero {
+        padding: 52px 58px 44px;
+    }
+
+    .dashboard_hero_text h2 {
+        font-size: 34px;
+    }
+
+    .dashboard_stats li {
+        grid-template-columns: 58px minmax(0, 1fr);
+        padding: 14px 15px;
+    }
+
+    .dashboard_stats img {
+        width: 54px;
+        height: 54px;
+    }
+
+    .emotion_history,
+    .visited_space,
+    .scrap_history,
+    .mood_report,
+    .recommendation {
+        padding-right: 34px;
+        padding-left: 34px;
+    }
+
+    .space_grid,
+    .scrap_grid {
+        gap: 20px;
+    }
+
+    .mini_card_image {
+        height: 145px;
+    }
+
+    .report_layout {
+        grid-template-columns: 240px minmax(0, 1fr);
+        gap: 36px;
+    }
+
+    .recommend_grid {
+        gap: 24px;
+    }
+
+    .recommend_panel {
+        padding: 18px;
+    }
+
+    .recommend_items {
+        gap: 12px;
+    }
+
+    .recommend_image {
+        height: 105px;
+    }
+
+    .footer_menu {
+        gap: 45px;
+    }
+}
+
+
+/* =========================================================
+   15. TABLET
+========================================================= */
+@media (max-width: 1024px) {
+    :root {
+        --side-padding: 30px;
+    }
+
+    /* HEADER */
+    #header {
+        height: 76px;
+    }
+
+    .header_logo img {
+        width: 150px;
+    }
+
+    .header_menu {
+        gap: 27px;
+    }
+
+    .header_menu a {
+        font-size: 12px;
+    }
+
+    .header_util {
+        gap: 12px;
+    }
+
+    .header_util a,
+    .header_util img {
+        width: 19px;
+        height: 19px;
+    }
+
+    /* SCROLL POSITION */
+    #dashboard,
+    #emotionHistory,
+    #visitedSpace,
+    #scrapHistory,
+    #report,
+    #recommend {
+        scroll-margin-top: 96px;
+    }
+
+    /* LAYOUT */
+    .mylog_section {
+        padding-top: 105px;
+    }
+
+    .mylog_inner {
+        display: block;
+    }
+
+    .mylog_sidebar {
+        margin-bottom: 36px;
+    }
+
+    .mylog_sidebar_sticky {
+        position: static;
+        display: grid;
+        grid-template-columns: 240px minmax(0, 1fr);
+        gap: 28px;
+        min-height: 0;
+        padding: 26px 28px;
+    }
+
+    .profile_summary {
+        justify-content: center;
+    }
+
+    .profile_avatar {
+        width: 82px;
+        height: 82px;
+    }
+
+    .profile_name {
+        margin-top: 14px;
+        font-size: 16px;
+    }
+
+    .profile_edit_button {
+        width: 128px;
+        height: 62px;
+    }
+
+    .sidebar_nav {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 10px;
+        margin-top: 0;
+    }
+
+    .sidebar_link,
+    .sidebar_logout {
+        justify-content: flex-start;
+        min-height: 40px;
+        padding: 0 12px;
+        font-size: 12px;
+    }
+
+    .sidebar_link img,
+    .sidebar_logout img {
+        width: 21px;
+        height: 21px;
+    }
+
+    .sidebar_logout {
+        grid-column: 1 / -1;
+        margin-top: 6px;
+    }
+
+    .mylog_content {
+        gap: 42px;
+    }
+
+    /* HERO */
+    .dashboard_hero {
+        min-height: 405px;
+        padding: 48px 50px 44px;
+    }
+
+    .dashboard_greeting {
+        font-size: 18px;
+    }
+
+    .dashboard_hero_text h2 {
+        font-size: 32px;
+    }
+
+    .dashboard_description {
+        margin-top: 22px;
+        font-size: 14px;
+    }
+
+    .dashboard_stats {
+        gap: 12px;
+        margin-top: 48px;
+    }
+
+    .dashboard_stats li {
+        grid-template-columns: 1fr;
+        justify-items: center;
+        row-gap: 10px;
+        min-height: 116px;
+        padding: 16px 12px;
+    }
+
+    .dashboard_stats img {
+        width: 52px;
+        height: 52px;
+        margin-left: 0;
+    }
+
+    .dashboard_stats strong {
+        font-size: 21px;
+    }
+
+    .dashboard_stats span {
+        font-size: 12px;
+    }
+
+    /* COMMON CARD */
+    .section_heading h2 {
+        font-size: 18px;
+    }
+
+    .view_more_button {
+        width: 120px;
+        height: 60px;
+        font-size: 11px;
+    }
+
+    .emotion_history,
+    .visited_space,
+    .scrap_history,
+    .mood_report,
+    .recommendation {
+        padding: 28px 34px 38px;
+    }
+
+    /* TIMELINE */
+    .emotion_timeline {
+        margin-top: 30px;
+    }
+
+    .emotion_timeline img {
+        width: 68px;
+        height: 68px;
+    }
+
+    .emotion_timeline strong {
+        font-size: 13px;
+    }
+
+    .emotion_timeline time {
+        font-size: 11px;
+    }
+
+    /* MINI CARDS */
+    .space_grid,
+    .scrap_grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 24px;
+    }
+
+    .mini_card_image {
+        height: 180px;
+    }
+
+    /* REPORT */
+    .report_layout {
+        grid-template-columns: 1fr;
+        gap: 28px;
+        margin-top: 28px;
+    }
+
+    .report_intro {
+        text-align: center;
+    }
+
+    .report_intro p {
+        font-size: 23px;
+    }
+
+    .report_intro>a {
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    .report_chart {
+        padding: 24px 26px;
+    }
+
+    /* RECOMMEND */
+    .recommend_grid {
+        grid-template-columns: 1fr;
+        gap: 28px;
+    }
+
+    .recommend_image {
+        height: 140px;
+    }
+
+    /* FOOTER */
+    .footer_inner {
+        grid-template-columns: 1fr 1fr;
+        row-gap: 35px;
+        padding-top: 80px;
+    }
+
+    .footer_nav {
+        display: none;
+    }
+
+    .footer_info {
+        grid-column: 2;
+    }
+}
+
+
+/* =========================================================
+   16. MOBILE
+========================================================= */
+@media (max-width: 768px) {
+    :root {
+        --side-padding: 18px;
+    }
+
+    /* HEADER */
+    #header {
+        height: 68px;
+    }
+
+    .header_inner {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .header_logo img {
+        width: 130px;
+    }
+
+    .header_nav {
+        display: none;
+    }
+
+    .header_util {
+        gap: 13px;
+    }
+
+    .header_util li:nth-child(2) {
+        display: none;
+    }
+
+    /* SCROLL POSITION */
+    #dashboard,
+    #emotionHistory,
+    #visitedSpace,
+    #scrapHistory,
+    #report,
+    #recommend {
+        scroll-margin-top: 82px;
+    }
+
+    /* LAYOUT */
+    body {
+        background-attachment: scroll;
+    }
+
+    .mylog_section {
+        padding-top: 92px;
+    }
+
+    .mylog_sidebar {
+        margin-bottom: 28px;
+    }
+
+    .mylog_sidebar_sticky {
+        display: block;
+        padding: 24px 22px;
+        border-radius: 18px;
+    }
+
+    .profile_avatar {
+        width: 76px;
+        height: 76px;
+    }
+
+    .profile_name {
+        font-size: 15px;
+    }
+
+    .profile_id {
+        font-size: 10px;
+    }
+
+    .profile_edit_button {
+        width: 120px;
+        height: 58px;
+        font-size: 11px;
+    }
+
+    .sidebar_nav {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 9px;
+        margin-top: 18px;
+    }
+
+    .sidebar_link,
+    .sidebar_logout {
+        min-height: 38px;
+        padding: 0 10px;
+        border-radius: 10px;
+        font-size: 11px;
+    }
+
+    .sidebar_link img,
+    .sidebar_logout img {
+        width: 19px;
+        height: 19px;
+    }
+
+    .sidebar_logout {
+        margin-top: 10px;
+    }
+
+    .mylog_content {
+        gap: 34px;
+    }
+
+    /* HERO */
+    .dashboard_hero {
+        min-height: 520px;
+        padding: 42px 28px 34px;
+    }
+
+    .dashboard_hero_bg {
+        object-position: 58% center;
+    }
+
+    .dashboard_greeting {
+        font-size: 15px;
+    }
+
+    .dashboard_hero_text h2 {
+        font-size: 28px;
+    }
+
+    .dashboard_description {
+        margin-top: 18px;
+        font-size: 13px;
+    }
+
+    .dashboard_stats {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 12px;
+        margin-top: 36px;
+    }
+
+    .dashboard_stats li {
+        grid-template-columns: 58px minmax(0, 1fr);
+        min-height: 78px;
+        padding: 12px 18px;
+    }
+
+    .dashboard_stats img {
+        width: 50px;
+        height: 50px;
+    }
+
+    .dashboard_stats_text {
+        align-items: flex-start;
+        gap: 7px;
+        text-align: left;
+    }
+
+    .dashboard_stats strong,
+    .dashboard_stats span {
+        text-align: left;
+    }
+
+    /* COMMON CARD */
+    .dashboard_card,
+    .dashboard_hero {
+        border-radius: 18px;
+    }
+
+    .section_heading {
+        align-items: flex-start;
+        gap: 14px;
+    }
+
+    .section_heading h2 {
+        font-size: 17px;
+    }
+
+    .view_more_button {
+        width: 106px;
+        height: 53px;
+        margin-top: -8px;
+        font-size: 10px;
+    }
+
+    .emotion_history,
+    .visited_space,
+    .scrap_history,
+    .mood_report,
+    .recommendation {
+        padding: 26px 22px 34px;
+    }
+
+    /* TIMELINE */
+    .emotion_timeline {
+        grid-template-columns: repeat(5, 92px);
+        gap: 0;
+        overflow-x: auto;
+        padding-bottom: 8px;
+        scrollbar-width: none;
+    }
+
+    .emotion_timeline::-webkit-scrollbar {
+        display: none;
+    }
+
+    .emotion_timeline::before {
+        right: auto;
+        left: 46px;
+        width: 368px;
+    }
+
+    .emotion_timeline img {
+        width: 62px;
+        height: 62px;
+        margin-top: 20px;
+    }
+
+    .emotion_timeline strong {
+        font-size: 12px;
+    }
+
+    .emotion_timeline time {
+        font-size: 10px;
+    }
+
+    /* MINI CARDS */
+    .space_grid,
+    .scrap_grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 16px;
+    }
+
+    .mini_card_image {
+        height: 130px;
+    }
+
+    .mini_card_text {
+        min-height: 78px;
+        padding: 11px 12px 13px;
+        margin-left: 0;
+    }
+
+    .mini_badge {
+        min-width: 38px;
+        height: 17px;
+        font-size: 8px;
+    }
+
+    .mini_card_text h3 {
+        font-size: 12px;
+    }
+
+    .mini_card_text p {
+        font-size: 10px;
+    }
+
+    /* SCRAP TABS */
+    .scrap_tabs {
+        gap: 24px;
+        overflow-x: auto;
+        padding-right: 4px;
+        padding-left: 4px;
+        scrollbar-width: none;
+    }
+
+    .scrap_tabs::-webkit-scrollbar {
+        display: none;
+    }
+
+    .scrap_tab {
+        flex-shrink: 0;
+        font-size: 13px;
+        white-space: nowrap;
+    }
+
+    /* REPORT */
+    .report_period {
+        min-width: 74px;
+        height: 26px;
+        padding: 0 10px;
+        font-size: 10px;
+    }
+
+    .report_intro p {
+        font-size: 20px;
+    }
+
+    .report_intro>span {
+        font-size: 12px;
+    }
+
+    .report_chart {
+        gap: 14px;
+        padding: 20px 18px;
+    }
+
+    .report_chart li {
+        grid-template-columns: 28px 50px minmax(0, 1fr) 34px;
+        gap: 9px;
+    }
+
+    .report_chart img {
+        width: 24px;
+        height: 24px;
+    }
+
+    .report_label {
+        font-size: 12px;
+    }
+
+    .report_chart strong {
+        font-size: 11px;
+    }
+
+    /* RECOMMEND */
+    .recommend_panel {
+        padding: 17px;
+    }
+
+    .recommend_panel_heading h3 {
+        font-size: 14px;
+    }
+
+    .recommend_more {
+        font-size: 11px;
+    }
+
+    .recommend_items {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 10px;
+    }
+
+    .recommend_image {
+        height: 92px;
+    }
+
+    .recommend_name {
+        font-size: 11px;
+    }
+
+    .recommend_badge {
+        height: 17px;
+        font-size: 9px;
+    }
+
+    /* FOOTER */
+    .footer_inner {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 28px;
+        padding: 65px 0 28px;
+        text-align: center;
+    }
+
+    .footer_brand,
+    .footer_info {
+        justify-self: auto;
+    }
+
+    .footer_logo {
+        width: 165px;
+        margin: 0 auto 14px;
+    }
+
+    .footer_brand>p {
+        font-size: 11px;
+    }
+
+    .footer_info {
+        font-size: 11px;
+        line-height: 1.7;
+        text-align: center;
+    }
+}
+
+
+/* =========================================================
+   17. SMALL MOBILE
+========================================================= */
+@media (max-width: 480px) {
+    .dashboard_hero_text h2 {
+        font-size: 25px;
+    }
+
+    .dashboard_description br,
+    .report_intro p br {
+        display: none;
+    }
+
+    .sidebar_nav {
+        grid-template-columns: 1fr;
+    }
+
+    .section_heading {
+        display: grid;
+        grid-template-columns: 1fr auto;
+    }
+
+    .space_grid,
+    .scrap_grid {
+        grid-template-columns: 1fr;
+    }
+
+    .mini_card {
+        max-width: 280px;
+        margin: 0 auto;
+    }
+
+    .mini_card_image {
+        height: 175px;
+    }
+
+    .report_chart {
+        padding: 18px 14px;
+    }
+
+    .report_chart li {
+        grid-template-columns: 24px 44px minmax(0, 1fr) 30px;
+        gap: 7px;
+    }
+
+    .report_chart img {
+        width: 22px;
+        height: 22px;
+    }
+
+    .report_label {
+        font-size: 11px;
+    }
+
+    .report_track {
+        height: 8px;
+    }
+
+    .recommend_items {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .recommend_items li {
+        max-width: 240px;
+        margin: 0 auto;
+    }
+
+    .recommend_image {
+        height: 150px;
+    }
+
+    .recommend_name {
+        font-size: 12px;
+    }
+}
