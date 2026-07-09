@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="감정에 어울리는 전시를 발견하는 무드카이브 전시 가이드">
+
+    <title>MOODCHIVE</title>
+
+    <!-- 파비콘 연결 -->
+    <link rel="shortcut icon" href="./images/favicon/favicon.png" type="image/x-icon">
+
+    <!-- 폰트 CSS -->
+    <link rel="stylesheet" href="./css/font.css">
+
+    <!-- EXHIBITION CSS -->
+    <link rel="stylesheet" href="./css/exhibition_style.css">
+
+    <!-- 커스텀 커서 css -->
+    <link rel="stylesheet" href="./css/cursor.css">
+</head>
+
+<body>
+    <div id="wrap">
+
+        <!-- ==================== HEADER ==================== -->
+        <header id="header">
+            <div class="header_inner">
+                <h1 class="header_logo">
+                    <a href="./index.html">
+                        <img src="./images/exhibition/logo1.svg" alt="Moodchive">
+                    </a>
+                </h1>
+
+                <nav class="header_nav" aria-label="주요 메뉴">
+                    <ul class="header_menu">
+                        <li><a href="./mood.html">MOOD</a></li>
+                        <li><a href="./archive.html">ARCHIVE</a></li>
+                        <li><a href="./exhibition.html" aria-current="page">EXHIBITION</a></li>
+                        <li><a href="./goods.html">GOODS</a></li>
+                        <li><a href="./mylog.html">MY LOG</a></li>
+                    </ul>
+                </nav>
+
+                <ul class="header_util">
+                    <li>
+                        <a href="javascript:return false;" aria-label="검색">
+                            <img src="./images/exhibition/search.png" alt="icon">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:return false;" aria-label="장바구니">
+                            <img src="./images/exhibition/cart.png" alt="icon">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:return false;" aria-label="마이페이지">
+                            <img src="./images/exhibition/profile.png" alt="icon">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </header>
+        <!-- ==================== HEADER 끝 ==================== -->
+
+
+        <main id="main">
+            <!-- =================================================
+                EXHIBITION INTRO
+            ================================================== -->
+            <section class="exhibition_intro">
+                <img src="./images/exhibition/intro_bg.png" alt="intro_bg" class="exhibition_intro_bg">
+
+                <div class="exhibition_intro_inner">
+                    <div class="exhibition_intro_text">
+                        <h2 class="exhibition_intro_title">
+                            감정을 만나는 순간,<br>
+                            전시가 시작됩니다
+                        </h2>
+
+                        <p class="exhibition_intro_description">
+                            무드카이브가 제안하는 전시 공간을 둘러보고,
+                            나에게 맞는 무드를 발견해 보세요.
+                        </p>
+
+                        <a href="#exhibitionList" class="scroll_button">
+                            <img src="./images/exhibition/down.png" alt="" aria-hidden="true">
+                            <span>SCROLL DOWN</span>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+
+            <!-- =================================================
+                EXHIBITION LIST
+            ================================================== -->
+            <section class="exhibition_section" id="exhibitionList">
+                <div class="exhibition_inner">
+
+                    <!-- 섹션 상단 -->
+                    <div class="exhibition_heading">
+                        <div class="exhibition_heading_text">
+                            <p class="exhibition_eyebrow">Moodchive Exhibition Guide</p>
+                            <h2 class="exhibition_title">감정별 전시 추천</h2>
+                            <p class="exhibition_description">
+                                지금의 무드에 맞는 전시 공간을 <br>무드카이브가 큐레이션 해 드려요.
+                            </p>
+                        </div>
+
+                        <div class="exhibition_controls">
+                            <div class="category_tabs" role="tablist" aria-label="전시 분류">
+                                <button type="button" class="category_tab active" role="tab" aria-selected="true">
+                                    감정별 추천
+                                </button>
+                                <button type="button" class="category_tab" role="tab" aria-selected="false">
+                                    현재 진행 중인 전시
+                                </button>
+                                <button type="button" class="category_tab" role="tab" aria-selected="false">
+                                    예정 전시
+                                </button>
+                                <button type="button" class="category_tab" role="tab" aria-selected="false">
+                                    무드카이브 기획전
+                                </button>
+                            </div>
+
+                            <div class="emotion_filter" aria-label="감정 필터">
+                                <button type="button" class="emotion_button active" data-filter="all"
+                                    aria-pressed="true">
+                                    전체
+                                </button>
+                                <button type="button" class="emotion_button" data-filter="happy" aria-pressed="false">
+                                    행복한
+                                </button>
+                                <button type="button" class="emotion_button" data-filter="comfortable"
+                                    aria-pressed="false">
+                                    평온한
+                                </button>
+                                <button type="button" class="emotion_button" data-filter="anxious" aria-pressed="false">
+                                    불안한
+                                </button>
+                                <button type="button" class="emotion_button" data-filter="calm" aria-pressed="false">
+                                    공허한
+                                </button>
+                                <button type="button" class="emotion_button" data-filter="relaxed" aria-pressed="false">
+                                    여백의
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="recommended_label">추천 전시 48</div>
+
+                    <!-- 전시 카드 -->
+                    <ul class="exhibition_card_list">
+                        <li class="exhibition_card" data-emotion="comfortable">
+                            <a href="javascript:return false;" class="exhibition_card_link">
+                                <div class="exhibition_card_image">
+                                    <img src="./images/exhibition/img1.png" alt="exhibition" loading="lazy">
+                                </div>
+                                <div class="exhibition_card_content">
+                                    <div class="exhibition_card_top">
+                                        <h3>빛의 시어터</h3>
+                                        <span class="exhibition_location">
+                                            <img src="./images/exhibition/map.png" alt="map" aria-hidden="true">
+                                            부산 중구
+                                        </span>
+                                    </div>
+                                    <p class="exhibition_card_description">
+                                        고요하게 몰입하고 싶은 날, <br>빛의 흐름에 천천히 잠기는 미디어 아트 공간
+                                    </p>
+                                    <div class="exhibition_card_bottom">
+                                        <div class="exhibition_tags">
+                                            <span class="exhibition_tag tag_comfortable">#평온</span>
+                                            <span class="exhibition_tag tag_type">#몰입</span>
+                                        </div>
+                                        <span class="exhibition_more">자세히 보기 <b>→</b></span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+
+                        <li class="exhibition_card" data-emotion="happy">
+                            <a href="javascript:return false;" class="exhibition_card_link">
+                                <div class="exhibition_card_image">
+                                    <img src="./images/exhibition/img2.png" alt="exhibition" loading="lazy">
+                                </div>
+                                <div class="exhibition_card_content">
+                                    <div class="exhibition_card_top">
+                                        <h3>유리 너머의 정원</h3>
+                                        <span class="exhibition_location">
+                                            <img src="./images/exhibition/map.png" alt="map" aria-hidden="true">
+                                            서울 종로구
+                                        </span>
+                                    </div>
+                                    <p class="exhibition_card_description">
+                                        투명한 오브제와 초록빛 식물이 어우러진 <br>
+                                        산뜻하고 부드러운 설치 전시
+
+                                    </p>
+                                    <div class="exhibition_card_bottom">
+                                        <div class="exhibition_tags">
+                                            <span class="exhibition_tag tag_happy">#행복</span>
+                                            <span class="exhibition_tag tag_type">#자연</span>
+                                        </div>
+                                        <span class="exhibition_more">자세히 보기 <b>→</b></span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+
+                        <li class="exhibition_card" data-emotion="anxious">
+                            <a href="javascript:return false;" class="exhibition_card_link">
+                                <div class="exhibition_card_image">
+                                    <img src="./images/exhibition/img3.png" alt="exhibition" loading="lazy">
+                                </div>
+                                <div class="exhibition_card_content">
+                                    <div class="exhibition_card_top">
+                                        <h3>사라지는 소리들</h3>
+                                        <span class="exhibition_location">
+                                            <img src="./images/exhibition/map.png" alt="map" aria-hidden="true">
+                                            부산 해운대구
+                                        </span>
+                                    </div>
+                                    <p class="exhibition_card_description">
+                                        낯선 음향과 미세한 진동이 공간을 채우며 <br> 감각을 깨우는 사운드 아트 전시
+
+                                    </p>
+                                    <div class="exhibition_card_bottom">
+                                        <div class="exhibition_tags">
+                                            <span class="exhibition_tag tag_anxious">#불안</span>
+                                            <span class="exhibition_tag tag_type">#호기심</span>
+                                        </div>
+                                        <span class="exhibition_more">자세히 보기 <b>→</b></span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+
+                        <li class="exhibition_card" data-emotion="relaxed">
+                            <a href="javascript:return false;" class="exhibition_card_link">
+                                <div class="exhibition_card_image">
+                                    <img src="./images/exhibition/img4.png" alt="exhibition" loading="lazy">
+                                </div>
+                                <div class="exhibition_card_content">
+                                    <div class="exhibition_card_top">
+                                        <h3>낯선 나의 얼굴</h3>
+                                        <span class="exhibition_location">
+                                            <img src="./images/exhibition/map.png" alt="map" aria-hidden="true">
+                                            서울 성동구
+                                        </span>
+                                    </div>
+                                    <p class="exhibition_card_description">
+                                        거울과 빛에 비친 새로운 모습을 통해 <br> 익숙했던 나를 다시 마주하는 전시
+
+                                    </p>
+                                    <div class="exhibition_card_bottom">
+                                        <div class="exhibition_tags">
+                                            <span class="exhibition_tag tag_relaxed">#여백</span>
+                                            <span class="exhibition_tag tag_type">#몰입</span>
+                                        </div>
+                                        <span class="exhibition_more">자세히 보기 <b>→</b></span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+
+                        <li class="exhibition_card" data-emotion="comfortable">
+                            <a href="javascript:return false;" class="exhibition_card_link">
+                                <div class="exhibition_card_image">
+                                    <img src="./images/exhibition/img5.png" alt="exhibition" loading="lazy">
+                                </div>
+                                <div class="exhibition_card_content">
+                                    <div class="exhibition_card_top">
+                                        <h3>파란 숨의 방</h3>
+                                        <span class="exhibition_location">
+                                            <img src="./images/exhibition/map.png" alt="map" aria-hidden="true">
+                                            부산 수영구
+                                        </span>
+                                    </div>
+                                    <p class="exhibition_card_description">
+                                        푸른빛이 천천히 번지는 공간 속에서 <br> 잠시 멈춰 호흡을 되찾는 몰입형 전시
+
+                                    </p>
+                                    <div class="exhibition_card_bottom">
+                                        <div class="exhibition_tags">
+                                            <span class="exhibition_tag tag_comfortable">#평온</span>
+                                            <span class="exhibition_tag tag_type">#위로</span>
+                                        </div>
+                                        <span class="exhibition_more">자세히 보기 <b>→</b></span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+
+                        <li class="exhibition_card" data-emotion="happy">
+                            <a href="javascript:return false;" class="exhibition_card_link">
+                                <div class="exhibition_card_image">
+                                    <img src="./images/exhibition/img6.png" alt="exhibition" loading="lazy">
+                                </div>
+                                <div class="exhibition_card_content">
+                                    <div class="exhibition_card_top">
+                                        <h3>기쁨의 조각들</h3>
+                                        <span class="exhibition_location">
+                                            <img src="./images/exhibition/map.png" alt="" aria-hidden="true">
+                                            부산 동래구
+                                        </span>
+                                    </div>
+                                    <p class="exhibition_card_description">
+                                        선명한 색과 유쾌한 형태가 이어지며 <br> 평범한 하루에 작은 활력을 더하는 전시
+                                    </p>
+                                    <div class="exhibition_card_bottom">
+                                        <div class="exhibition_tags">
+                                            <span class="exhibition_tag tag_happy">#행복</span>
+                                            <span class="exhibition_tag tag_type">#설렘</span>
+                                        </div>
+                                        <span class="exhibition_more">자세히 보기 <b>→</b></span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+
+                        <li class="exhibition_card" data-emotion="anxious">
+                            <a href="javascript:return false;" class="exhibition_card_link">
+                                <div class="exhibition_card_image">
+                                    <img src="./images/exhibition/img7.png" alt="exhibition" loading="lazy">
+                                </div>
+                                <div class="exhibition_card_content">
+                                    <div class="exhibition_card_top">
+                                        <h3>흔들리는 경계</h3>
+                                        <span class="exhibition_location">
+                                            <img src="./images/exhibition/map.png" alt="map" aria-hidden="true">
+                                            서울 중구
+                                        </span>
+                                    </div>
+                                    <p class="exhibition_card_description">
+                                        움직이는 그림자와 불안정한 구조를 통해 <br> 마음속 긴장과 흔들림을 마주하는 전시
+                                    </p>
+                                    <div class="exhibition_card_bottom">
+                                        <div class="exhibition_tags">
+                                            <span class="exhibition_tag tag_anxious">#불안</span>
+                                            <span class="exhibition_tag tag_type">#낯섦</span>
+                                        </div>
+                                        <span class="exhibition_more">자세히 보기 <b>→</b></span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+
+                        <li class="exhibition_card" data-emotion="calm">
+                            <a href="javascript:return false;" class="exhibition_card_link">
+                                <div class="exhibition_card_image">
+                                    <img src="./images/exhibition/img8.png" alt="exhibition" loading="lazy">
+                                </div>
+                                <div class="exhibition_card_content">
+                                    <div class="exhibition_card_top">
+                                        <h3>별이 머문 자리</h3>
+                                        <span class="exhibition_location">
+                                            <img src="./images/exhibition/map.png" alt="map" aria-hidden="true">
+                                            부산 연제구
+                                        </span>
+                                    </div>
+                                    <p class="exhibition_card_description">
+                                        어둠 속 작은 빛들이 천천히 이어지며 <br> 잊고 있던 기억을 떠올리게 하는 전시
+                                    </p>
+                                    <div class="exhibition_card_bottom">
+                                        <div class="exhibition_tags">
+                                            <span class="exhibition_tag tag_calm">#공허</span>
+                                            <span class="exhibition_tag tag_type">#그리움</span>
+                                        </div>
+                                        <span class="exhibition_more">자세히 보기 <b>→</b></span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+
+                        <li class="exhibition_card" data-emotion="happy">
+                            <a href="javascript:return false;" class="exhibition_card_link">
+                                <div class="exhibition_card_image">
+                                    <img src="./images/exhibition/img9.png" alt="exhibition" loading="lazy">
+                                </div>
+                                <div class="exhibition_card_content">
+                                    <div class="exhibition_card_top">
+                                        <h3>햇살을 모으는 방</h3>
+                                        <span class="exhibition_location">
+                                            <img src="./images/exhibition/map.png" alt="map" aria-hidden="true">
+                                            서울 광진구
+                                        </span>
+                                    </div>
+                                    <p class="exhibition_card_description">
+                                        투명한 오브제 사이로 번지는 따뜻한 햇빛과 <br> 부드러운 색채를 따라 걷는 밝은 설치 전시
+                                    </p>
+                                    <div class="exhibition_card_bottom">
+                                        <div class="exhibition_tags">
+                                            <span class="exhibition_tag tag_happy">#행복</span>
+                                            <span class="exhibition_tag tag_type">#놀이</span>
+                                        </div>
+                                        <span class="exhibition_more">자세히 보기 <b>→</b></span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+
+                    <!-- 페이지네이션 -->
+                    <nav class="exhibition_pagination" aria-label="전시 목록 페이지">
+                        <button type="button" class="pagination_arrow" aria-label="이전 페이지">‹</button>
+                        <button type="button" class="pagination_number active" aria-current="page">1</button>
+                        <button type="button" class="pagination_number">2</button>
+                        <button type="button" class="pagination_number">3</button>
+                        <button type="button" class="pagination_number">4</button>
+                        <button type="button" class="pagination_number">5</button>
+                        <button type="button" class="pagination_arrow" aria-label="다음 페이지">›</button>
+                    </nav>
+
+                    <!-- 무드카이브 기획전 배너 -->
+                    <section class="original_banner">
+                        <div class="original_banner_text">
+                            <p class="original_eyebrow">Moodchive Original</p>
+                            <h2>무드카이브 기획전</h2>
+                            <p>
+                                무드카이브가 직접 선정한<br>
+                                감정 가득한 전시도 함께 만나보세요.
+                            </p>
+                            <a href="javascript:return false;">기획전 보기 <span>→</span></a>
+                        </div>
+
+                        <div class="original_banner_image">
+                            <img src="./images/exhibition/moodchive.png" alt="무드카이브 기획전 미디어아트 공간" loading="lazy">
+                        </div>
+                    </section>
+                </div>
+            </section>
+
+
+            <!-- =================================================
+                NEWSLETTER
+            ================================================== -->
+            <section class="newsletter_section">
+                <div class="newsletter_inner">
+                    <div class="newsletter_info">
+                        <img src="./images/exhibition/newsletter_deco.png" alt="icon" class="newsletter_icon"
+                            aria-hidden="true">
+
+                        <div class="newsletter_text">
+                            <h2>새로운 전시와 이벤트 소식을 받아보세요!</h2>
+                            <p>무드카이브의 다양한 소식을 이메일로 받아보세요.</p>
+                        </div>
+                    </div>
+
+                    <form class="newsletter_form" onsubmit="event.preventDefault();">
+                        <label for="newsletterEmail" class="blind">이메일 주소</label>
+                        <input type="email" id="newsletterEmail" name="email" placeholder="이메일 주소를 입력해 주세요" required>
+                        <button type="submit">구독하기</button>
+                    </form>
+                </div>
+            </section>
+        </main>
+
+
+        <!-- ==================== FOOTER ==================== -->
+        <footer id="footer">
+            <div class="footer_inner">
+                <!-- 브랜드 정보 -->
+                <div class="footer_brand">
+                    <a href="./index.html" class="footer_logo">
+                        <img src="./images/index/logo.svg" alt="Moodchive">
+                    </a>
+                    <p>© 2026 MOODCHIVE. All rights reserved.</p>
+                </div>
+
+                <!-- 푸터 메뉴 -->
+                <nav class="footer_nav" aria-label="푸터 메뉴">
+                    <ul class="footer_menu">
+                        <li><a href="./mood.html">MOOD</a></li>
+                        <li><a href="./archive.html">ARCHIVE</a></li>
+                        <li><a href="./exhibition.html">EXHIBITION</a></li>
+                        <li><a href="./goods.html">GOODS</a></li>
+                        <li><a href="./mylog.html">MY LOG</a></li>
+                    </ul>
+                </nav>
+
+                <!-- 사업자 정보 -->
+                <address class="footer_info">
+                    <p><span>CEO:</span> SUMIN LEE</p>
+                    <p><span>ADDRESS:</span> Seongsu Mood Lab, Seoul</p>
+                    <p><span>MAIL ORDER LICENSE:</span> 2026-SEOUL-1022</p>
+                    <p>
+                        <span>CONTACT:</span>
+                        <a href="mailto:info@moodchive.com">info@moodchive.com</a>
+                    </p>
+                </address>
+            </div>
+        </footer>
+        <!-- ==================== FOOTER 끝 ==================== -->
+
+    </div>
+
+    <script src="https://code.jquery.com/jquery-4.0.0.js"
+        integrity="sha256-9fsHeVnKBvqh3FB2HYu7g2xseAZ5MlN6Kz/qnkASV8U=" crossorigin="anonymous">
+        </script>
+
+    <script>
+        const header = document.querySelector("#header");
+        const categoryTabs = document.querySelectorAll(".category_tab");
+        const emotionButtons = document.querySelectorAll(".emotion_button");
+        const exhibitionCards = document.querySelectorAll(".exhibition_card");
+
+        function updateHeaderBackground() {
+            header.classList.toggle("scrolled", window.scrollY > 20);
+        }
+
+        window.addEventListener("scroll", updateHeaderBackground);
+        updateHeaderBackground();
+
+        categoryTabs.forEach((tab) => {
+            tab.addEventListener("click", () => {
+                categoryTabs.forEach((item) => {
+                    item.classList.remove("active");
+                    item.setAttribute("aria-selected", "false");
+                });
+
+                tab.classList.add("active");
+                tab.setAttribute("aria-selected", "true");
+            });
+        });
+
+        emotionButtons.forEach((button) => {
+            button.addEventListener("click", () => {
+                const selectedEmotion = button.dataset.filter;
+
+                emotionButtons.forEach((item) => {
+                    item.classList.remove("active");
+                    item.setAttribute("aria-pressed", "false");
+                });
+
+                button.classList.add("active");
+                button.setAttribute("aria-pressed", "true");
+
+                exhibitionCards.forEach((card) => {
+                    const isVisible = selectedEmotion === "all" || card.dataset.emotion === selectedEmotion;
+                    card.hidden = !isVisible;
+                });
+            });
+        });
+    </script>
+
+    <script src="./js/cursor.js"></script>
+    <script src="./js/mobile-menu.js"></script>
+</body>
+
+</html>

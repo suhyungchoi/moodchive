@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="감정을 오래 간직할 수 있는 무드카이브 굿즈 컬렉션">
+
+    <title>MOODCHIVE</title>
+
+    <!-- 파비콘 연결 -->
+    <link rel="shortcut icon" href="./images/favicon/favicon.png" type="image/x-icon">
+
+    <!-- 폰트 css -->
+    <link rel="stylesheet" href="./css/font.css">
+
+    <!-- 외부 스타일 css -->
+    <link rel="stylesheet" href="./css/goods_style.css">
+
+    <!-- 커스텀 커서 css -->
+    <link rel="stylesheet" href="./css/cursor.css">
+</head>
+
+<body>
+    <div id="wrap">
+
+        <!-- ==================== HEADER ==================== -->
+        <header id="header">
+            <div class="header_inner">
+                <h1 class="header_logo">
+                    <a href="./index.html">
+                        <img src="./images/goods/logo.svg" alt="Moodchive">
+                    </a>
+                </h1>
+
+                <nav class="header_nav" aria-label="주요 메뉴">
+                    <ul class="header_menu">
+                        <li><a href="./mood.html">MOOD</a></li>
+                        <li><a href="./archive.html">ARCHIVE</a></li>
+                        <li><a href="./exhibition.html">EXHIBITION</a></li>
+                        <li><a href="./goods.html" aria-current="page">GOODS</a></li>
+                        <li><a href="./mylog.html">MY LOG</a></li>
+                    </ul>
+                </nav>
+
+                <ul class="header_util">
+                    <li>
+                        <a href="javascript:return false;" aria-label="검색">
+                            <img src="./images/goods/search.png" alt="icon">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:return false;" aria-label="장바구니">
+                            <img src="./images/goods/cart.png" alt="icon">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:return false;" aria-label="마이페이지">
+                            <img src="./images/goods/profile.png" alt="icon">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </header>
+        <!-- ==================== HEADER 끝 ==================== -->
+
+
+        <main id="main">
+            <!-- =================================================
+                GOODS INTRO
+            ================================================== -->
+            <section class="goods_intro">
+                <img src="./images/goods/intro_bg.png" alt="intro_bg" class="goods_intro_bg" aria-hidden="true">
+
+                <div class="goods_intro_inner">
+                    <div class="goods_intro_text">
+                        <h2 class="goods_intro_title">
+                            감정을 오래 간직하는 방법
+                        </h2>
+
+                        <p class="goods_intro_description">
+                            당신의 무드를 닮은 오브제들로
+                            일상 속 작은 순간을 기록해보세요.
+                        </p>
+
+                        <a href="#goodsCatalog" class="scroll_button">
+                            <img src="./images/goods/arrow.png" alt="arrow" aria-hidden="true">
+                            <span>SCROLL DOWN</span>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+
+            <!-- =================================================
+                GOODS BENEFITS
+            ================================================== -->
+            <section class="goods_benefit_section" aria-label="무드카이브 굿즈 특징">
+                <div class="goods_benefit_inner">
+                    <article class="benefit_item">
+                        <img src="./images/goods/icon1.png" alt="icon" aria-hidden="true">
+                        <h2>무드 기반 디자인</h2>
+                        <p>감정에서 영감을 받은 오리지널 디자인</p>
+                    </article>
+
+                    <article class="benefit_item">
+                        <img src="./images/goods/icon2.png" alt="icon" aria-hidden="true">
+                        <h2>일상 속 작은 위로</h2>
+                        <p>작지만 확실한, 당신의 감정을 담은 오브제</p>
+                    </article>
+
+                    <article class="benefit_item">
+                        <img src="./images/goods/icon3.png" alt="icon" aria-hidden="true">
+                        <h2>기록을 더 특별하게</h2>
+                        <p>당신의 기록과 함께 오래 기억되는 순간</p>
+                    </article>
+
+                    <article class="benefit_item">
+                        <img src="./images/goods/icon4.png" alt="icon" aria-hidden="true">
+                        <h2>소중한 사람에게</h2>
+                        <p>마음을 전할 수 있는 센스 있는 선물</p>
+                    </article>
+                </div>
+            </section>
+
+
+            <!-- =================================================
+                GOODS CATALOG
+            ================================================== -->
+            <section class="goods_catalog_section" id="goodsCatalog">
+                <div class="goods_catalog_inner">
+
+                    <!-- 왼쪽 고정 메뉴와 배너 -->
+                    <aside class="goods_sidebar" aria-label="굿즈 카테고리">
+                        <div class="goods_sidebar_sticky">
+                            <nav class="goods_category">
+                                <button type="button" class="category_button active" data-category="all"
+                                    aria-pressed="true">
+                                    ALL
+                                </button>
+                                <button type="button" class="category_button" data-category="stationery"
+                                    aria-pressed="false">
+                                    STATIONERY
+                                </button>
+                                <button type="button" class="category_button" data-category="living"
+                                    aria-pressed="false">
+                                    LIVING
+                                </button>
+                                <button type="button" class="category_button" data-category="acc" aria-pressed="false">
+                                    ACC
+                                </button>
+                            </nav>
+
+                            <a href="javascript:return false;" class="goods_side_banner" aria-label="Moodchive Collection 자세히 보기">
+
+                                <img src="./images/goods/left_banner.png" alt="banner" class="goods_side_banner_bg"
+                                    aria-hidden="true">
+
+                                <div class="goods_side_banner_content">
+                                    <h3 class="goods_side_banner_title">
+                                        Moodchive<br>
+                                        Collection
+                                    </h3>
+
+                                    <div class="goods_side_banner_bottom">
+                                        <p class="goods_side_banner_description">
+                                            시즌 한정 컬렉션을 확인해 보세요.
+                                        </p>
+
+                                        <span class="goods_side_banner_button">
+                                            바로가기
+                                        </span>
+                                    </div>
+                                </div>
+
+                            </a>
+                        </div>
+                    </aside>
+
+
+                    <!-- 오른쪽 굿즈 목록 -->
+                    <div class="goods_list_panel">
+                        <div class="goods_list_heading">
+                            <h2 id="goodsListTitle">ALL</h2>
+                            <p><span id="goodsCount">21</span> ITEMS</p>
+                        </div>
+
+                        <ul class="goods_grid">
+                            <li class="goods_card" data-category="stationery">
+                                <a href="javascript:return false;" class="goods_card_link">
+                                    <div class="goods_image"><img src="./images/goods/goods_1.png"
+                                            alt="Masking Tape Set"></div>
+                                    <div class="goods_info">
+                                        <h3>Masking Tape Set</h3>
+                                        <p>₩13,000</p>
+                                    </div>
+                                </a>
+                                <button type="button" class="goods_cart_button"
+                                    aria-label="Masking Tape Set 장바구니 담기"><img src="./images/goods/cart2.png"
+                                        alt="cart"></button>
+                            </li>
+
+                            <li class="goods_card" data-category="stationery">
+                                <a href="javascript:return false;" class="goods_card_link">
+                                    <div class="goods_image"><img src="./images/goods/goods_2.png"
+                                            alt="Archive Notes Pink"></div>
+                                    <div class="goods_info">
+                                        <h3>Archive Notes (pink)</h3>
+                                        <p>₩15,000</p>
+                                    </div>
+                                </a>
+                                <button type="button" class="goods_cart_button"
+                                    aria-label="Archive Notes Pink 장바구니 담기"><img src="./images/goods/cart2.png"
+                                        alt="cart"></button>
+                            </li>
+
+                            <li class="goods_card" data-category="stationery">
+                                <a href="javascript:return false;" class="goods_card_link">
+                                    <div class="goods_image"><img src="./images/goods/goods_3.png"
+                                            alt="Archive Notes Blue"></div>
+                                    <div class="goods_info">
+                                        <h3>Archive Notes (blue)</h3>
+                                        <p>₩15,000</p>
+                                    </div>
+                                </a>
+                                <button type="button" class="goods_cart_button"
+                                    aria-label="Archive Notes Blue 장바구니 담기"><img src="./images/goods/cart2.png"
+                                        alt="cart"></button>
+                            </li>
+
+                            <li class="goods_card" data-category="stationery">
+                                <a href="javascript:return false;" class="goods_card_link">
+                                    <div class="goods_image"><img src="./images/goods/goods_4.png"
+                                            alt="Archive Notes Orange"></div>
+                                    <div class="goods_info">
+                                        <h3>Archive Notes (orange)</h3>
+                                        <p>₩15,000</p>
+                                    </div>
+                                </a>
+                                <button type="button" class="goods_cart_button"
+                                    aria-label="Archive Notes Orange 장바구니 담기"><img src="./images/goods/cart2.png"
+                                        alt="cart"></button>
+                            </li>
+
+                            <li class="goods_card" data-category="stationery">
+                                <a href="javascript:return false;" class="goods_card_link">
+                                    <div class="goods_image"><img src="./images/goods/goods_5.png"
+                                            alt="Archive Notes Green"></div>
+                                    <div class="goods_info">
+                                        <h3>Archive Notes (green)</h3>
+                                        <p>₩15,000</p>
+                                    </div>
+                                </a>
+                                <button type="button" class="goods_cart_button"
+                                    aria-label="Archive Notes Green 장바구니 담기"><img src="./images/goods/cart2.png"
+                                        alt="cart"></button>
+                            </li>
+
+                            <li class="goods_card" data-category="stationery">
+                                <a href="javascript:return false;" class="goods_card_link">
+                                    <div class="goods_image"><img src="./images/goods/goods_6.png"
+                                            alt="Archive Notes Purple"></div>
+                                    <div class="goods_info">
+                                        <h3>Archive Notes (purple)</h3>
+                                        <p>₩15,000</p>
+                                    </div>
+                                </a>
+                                <button type="button" class="goods_cart_button"
+                                    aria-label="Archive Notes Purple 장바구니 담기"><img src="./images/goods/cart2.png"
+                                        alt="cart"></button>
+                            </li>
+
+                            <li class="goods_card" data-category="living">
+                                <a href="javascript:return false;" class="goods_card_link">
+                                    <div class="goods_image"><img src="./images/goods/goods_7.png" alt="Archive Rug">
+                                    </div>
+                                    <div class="goods_info">
+                                        <h3>Archive Rug</h3>
+                                        <p>₩36,000</p>
+                                    </div>
+                                </a>
+                                <button type="button" class="goods_cart_button" aria-label="Archive Rug 장바구니 담기"><img
+                                        src="./images/goods/cart2.png" alt="cart"></button>
+                            </li>
+
+                            <li class="goods_card" data-category="living">
+                                <a href="javascript:return false;" class="goods_card_link">
+                                    <div class="goods_image"><img src="./images/goods/goods_8.png" alt="Mood Candle">
+                                    </div>
+                                    <div class="goods_info">
+                                        <h3>Mood Candle</h3>
+                                        <p>₩24,000</p>
+                                    </div>
+                                </a>
+                                <button type="button" class="goods_cart_button" aria-label="Mood Candle 장바구니 담기"><img
+                                        src="./images/goods/cart2.png" alt="cart"></button>
+                            </li>
+
+                            <li class="goods_card" data-category="living">
+                                <a href="javascript:return false;" class="goods_card_link">
+                                    <div class="goods_image"><img src="./images/goods/goods_9.png"
+                                            alt="Record Mug Pink"></div>
+                                    <div class="goods_info">
+                                        <h3>Record Mug (pink)</h3>
+                                        <p>₩17,000</p>
+                                    </div>
+                                </a>
+                                <button type="button" class="goods_cart_button"
+                                    aria-label="Record Mug Pink 장바구니 담기"><img src="./images/goods/cart2.png"
+                                        alt="cart"></button>
+                            </li>
+
+                            <li class="goods_card" data-category="living">
+                                <a href="javascript:return false;" class="goods_card_link">
+                                    <div class="goods_image"><img src="./images/goods/goods_10.png"
+                                            alt="Record Mug Blue"></div>
+                                    <div class="goods_info">
+                                        <h3>Record Mug (blue)</h3>
+                                        <p>₩17,000</p>
+                                    </div>
+                                </a>
+                                <button type="button" class="goods_cart_button"
+                                    aria-label="Record Mug Blue 장바구니 담기"><img src="./images/goods/cart2.png"
+                                        alt="cart"></button>
+                            </li>
+
+                            <li class="goods_card" data-category="living">
+                                <a href="javascript:return false;" class="goods_card_link">
+                                    <div class="goods_image"><img src="./images/goods/goods_11.png"
+                                            alt="Record Mug Orange"></div>
+                                    <div class="goods_info">
+                                        <h3>Record Mug (orange)</h3>
+                                        <p>₩17,000</p>
+                                    </div>
+                                </a>
+                                <button type="button" class="goods_cart_button"
+                                    aria-label="Record Mug Orange 장바구니 담기"><img src="./images/goods/cart2.png"
+                                        alt="cart"></button>
+                            </li>
+
+                            <li class="goods_card" data-category="living">
+                                <a href="javascript:return false;" class="goods_card_link">
+                                    <div class="goods_image"><img src="./images/goods/goods_12.png"
+                                            alt="Record Mug Green"></div>
+                                    <div class="goods_info">
+                                        <h3>Record Mug (green)</h3>
+                                        <p>₩17,000</p>
+                                    </div>
+                                </a>
+                                <button type="button" class="goods_cart_button"
+                                    aria-label="Record Mug Green 장바구니 담기"><img src="./images/goods/cart2.png"
+                                        alt="cart"></button>
+                            </li>
+
+                            <li class="goods_card" data-category="living">
+                                <a href="javascript:return false;" class="goods_card_link">
+                                    <div class="goods_image"><img src="./images/goods/goods_13.png"
+                                            alt="Record Mug Purple"></div>
+                                    <div class="goods_info">
+                                        <h3>Record Mug (purple)</h3>
+                                        <p>₩17,000</p>
+                                    </div>
+                                </a>
+                                <button type="button" class="goods_cart_button"
+                                    aria-label="Record Mug Purple 장바구니 담기"><img src="./images/goods/cart2.png"
+                                        alt="cart"></button>
+                            </li>
+
+                            <li class="goods_card" data-category="acc">
+                                <a href="javascript:return false;" class="goods_card_link">
+                                    <div class="goods_image"><img src="./images/goods/goods_14.png"
+                                            alt="Daily Case Pink"></div>
+                                    <div class="goods_info">
+                                        <h3>Daily Case (pink)</h3>
+                                        <p>₩19,000</p>
+                                    </div>
+                                </a>
+                                <button type="button" class="goods_cart_button"
+                                    aria-label="Daily Case Pink 장바구니 담기"><img src="./images/goods/cart2.png"
+                                        alt="cart"></button>
+                            </li>
+
+                            <li class="goods_card" data-category="acc">
+                                <a href="javascript:return false;" class="goods_card_link">
+                                    <div class="goods_image"><img src="./images/goods/goods_15.png"
+                                            alt="Daily Case Green"></div>
+                                    <div class="goods_info">
+                                        <h3>Daily Case (green)</h3>
+                                        <p>₩19,000</p>
+                                    </div>
+                                </a>
+                                <button type="button" class="goods_cart_button"
+                                    aria-label="Daily Case Green 장바구니 담기"><img src="./images/goods/cart2.png"
+                                        alt="cart"></button>
+                            </li>
+
+                            <li class="goods_card" data-category="acc">
+                                <a href="javascript:return false;" class="goods_card_link">
+                                    <div class="goods_image"><img src="./images/goods/goods_16.png"
+                                            alt="Daily Case Purple"></div>
+                                    <div class="goods_info">
+                                        <h3>Daily Case (purple)</h3>
+                                        <p>₩19,000</p>
+                                    </div>
+                                </a>
+                                <button type="button" class="goods_cart_button"
+                                    aria-label="Daily Case Purple 장바구니 담기"><img src="./images/goods/cart2.png"
+                                        alt="cart"></button>
+                            </li>
+
+                            <li class="goods_card" data-category="acc">
+                                <a href="javascript:return false;" class="goods_card_link">
+                                    <div class="goods_image"><img src="./images/goods/goods_17.png"
+                                            alt="Moment Keyring Blue"></div>
+                                    <div class="goods_info">
+                                        <h3>Moment Keyring (blue)</h3>
+                                        <p>₩11,000</p>
+                                    </div>
+                                </a>
+                                <button type="button" class="goods_cart_button"
+                                    aria-label="Moment Keyring Blue 장바구니 담기"><img src="./images/goods/cart2.png"
+                                        alt="cart"></button>
+                            </li>
+
+                            <li class="goods_card" data-category="acc">
+                                <a href="javascript:return false;" class="goods_card_link">
+                                    <div class="goods_image"><img src="./images/goods/goods_18.png"
+                                            alt="Moment Keyring Pink"></div>
+                                    <div class="goods_info">
+                                        <h3>Moment Keyring (pink)</h3>
+                                        <p>₩11,000</p>
+                                    </div>
+                                </a>
+                                <button type="button" class="goods_cart_button"
+                                    aria-label="Moment Keyring Pink 장바구니 담기"><img src="./images/goods/cart2.png"
+                                        alt="cart"></button>
+                            </li>
+
+                            <li class="goods_card" data-category="acc">
+                                <a href="javascript:return false;" class="goods_card_link">
+                                    <div class="goods_image"><img src="./images/goods/goods_19.png"
+                                            alt="Moment Keyring Green"></div>
+                                    <div class="goods_info">
+                                        <h3>Moment Keyring (green)</h3>
+                                        <p>₩11,000</p>
+                                    </div>
+                                </a>
+                                <button type="button" class="goods_cart_button"
+                                    aria-label="Moment Keyring Green 장바구니 담기"><img src="./images/goods/cart2.png"
+                                        alt="cart"></button>
+                            </li>
+
+                            <li class="goods_card" data-category="acc">
+                                <a href="javascript:return false;" class="goods_card_link">
+                                    <div class="goods_image"><img src="./images/goods/goods_20.png"
+                                            alt="Moment Keyring Purple"></div>
+                                    <div class="goods_info">
+                                        <h3>Moment Keyring (purple)</h3>
+                                        <p>₩11,000</p>
+                                    </div>
+                                </a>
+                                <button type="button" class="goods_cart_button"
+                                    aria-label="Moment Keyring Purple 장바구니 담기"><img src="./images/goods/cart2.png"
+                                        alt="cart"></button>
+                            </li>
+
+                            <li class="goods_card" data-category="acc">
+                                <a href="javascript:return false;" class="goods_card_link">
+                                    <div class="goods_image"><img src="./images/goods/goods_21.png"
+                                            alt="Moment Keyring Orange"></div>
+                                    <div class="goods_info">
+                                        <h3>Moment Keyring (orange)</h3>
+                                        <p>₩11,000</p>
+                                    </div>
+                                </a>
+                                <button type="button" class="goods_cart_button"
+                                    aria-label="Moment Keyring Orange 장바구니 담기"><img src="./images/goods/cart2.png"
+                                        alt="cart"></button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+
+            <!-- =================================================
+                DELIVERY SERVICE
+            ================================================== -->
+            <section class="delivery_section">
+                <img src="./images/goods/banner_bg.png" alt="banner" class="delivery_bg" aria-hidden="true">
+
+                <div class="delivery_inner">
+                    <article class="delivery_item">
+                        <span class="delivery_icon"><img src="./images/goods/icon5.png" alt="icon"
+                                aria-hidden="true"></span>
+                        <div>
+                            <h2>3만원 이상 구매 시 무료배송</h2>
+                            <p>무드카이브의 모든 제품은 정성껏 포장되어 발송됩니다.</p>
+                        </div>
+                    </article>
+
+                    <article class="delivery_item">
+                        <span class="delivery_icon"><img src="./images/goods/icon4.png" alt="icon"
+                                aria-hidden="true"></span>
+                        <div>
+                            <h2>선물 포장 서비스</h2>
+                            <p>주문 시 선물 포장을 선택하실 수 있어요.</p>
+                        </div>
+                    </article>
+                </div>
+            </section>
+        </main>
+
+
+        <!-- ==================== FOOTER ==================== -->
+        <footer id="footer">
+            <div class="footer_inner">
+                <!-- 브랜드 정보 -->
+                <div class="footer_brand">
+                    <a href="./index.html" class="footer_logo">
+                        <img src="./images/index/logo.svg" alt="Moodchive">
+                    </a>
+                    <p>© 2026 MOODCHIVE. All rights reserved.</p>
+                </div>
+
+                <!-- 푸터 메뉴 -->
+                <nav class="footer_nav" aria-label="푸터 메뉴">
+                    <ul class="footer_menu">
+                        <li><a href="./mood.html">MOOD</a></li>
+                        <li><a href="./archive.html">ARCHIVE</a></li>
+                        <li><a href="./exhibition.html">EXHIBITION</a></li>
+                        <li><a href="./goods.html">GOODS</a></li>
+                        <li><a href="./mylog.html">MY LOG</a></li>
+                    </ul>
+                </nav>
+
+                <!-- 사업자 정보 -->
+                <address class="footer_info">
+                    <p><span>CEO:</span> SUMIN LEE</p>
+                    <p><span>ADDRESS:</span> Seongsu Mood Lab, Seoul</p>
+                    <p><span>MAIL ORDER LICENSE:</span> 2026-SEOUL-1022</p>
+                    <p>
+                        <span>CONTACT:</span>
+                        <a href="mailto:info@moodchive.com">info@moodchive.com</a>
+                    </p>
+                </address>
+            </div>
+        </footer>
+        <!-- ==================== FOOTER 끝 ==================== -->
+    </div>
+
+    <script src="https://code.jquery.com/jquery-4.0.0.js"
+        integrity="sha256-9fsHeVnKBvqh3FB2HYu7g2xseAZ5MlN6Kz/qnkASV8U=" crossorigin="anonymous">
+        </script>
+
+    <script>
+        const categoryButtons = document.querySelectorAll('.category_button');
+        const goodsCards = document.querySelectorAll('.goods_card');
+        const goodsListTitle = document.querySelector('#goodsListTitle');
+        const goodsCount = document.querySelector('#goodsCount');
+
+        const categoryNames = {
+            all: 'ALL',
+            stationery: 'STATIONERY',
+            living: 'LIVING',
+            acc: 'ACCESSORIES'
+        };
+
+        categoryButtons.forEach((button) => {
+            button.addEventListener('click', () => {
+                const selectedCategory = button.dataset.category;
+                let visibleCount = 0;
+
+                categoryButtons.forEach((item) => {
+                    const isActive = item === button;
+                    item.classList.toggle('active', isActive);
+                    item.setAttribute('aria-pressed', String(isActive));
+                });
+
+                goodsCards.forEach((card) => {
+                    const isVisible = selectedCategory === 'all' || card.dataset.category === selectedCategory;
+                    card.hidden = !isVisible;
+
+                    if (isVisible) {
+                        visibleCount += 1;
+                    }
+                });
+
+                goodsListTitle.textContent = categoryNames[selectedCategory];
+                goodsCount.textContent = visibleCount;
+            });
+        });
+
+        document.querySelectorAll('.goods_cart_button').forEach((button) => {
+            button.addEventListener('click', () => {
+                button.classList.toggle('selected');
+                button.setAttribute('aria-pressed', String(button.classList.contains('selected')));
+            });
+        });
+    </script>
+
+    <script src="./js/cursor.js"></script>
+    <script src="./js/mobile-menu.js"></script>
+</body>
+
+</html>
