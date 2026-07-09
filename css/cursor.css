@@ -1,0 +1,51 @@
+/* =========================================================
+   CURSOR SPARKLE
+========================================================= */
+
+@media (hover: hover) and (pointer: fine) {
+    .cursor_sparkle {
+        position: fixed;
+        z-index: 2147483647;
+
+        pointer-events: none;
+
+        color: var(--sparkle-color);
+        font-family: "Times New Roman", serif;
+        font-size: var(--sparkle-size);
+        line-height: 1;
+
+        text-shadow:
+            0 0 2px rgba(255, 255, 255, 0.95),
+            0 0 5px rgba(255, 255, 255, 0.75),
+            0 0 9px rgba(255, 255, 255, 0.45);
+
+        mix-blend-mode: normal;
+        will-change: transform, opacity;
+
+        transform: translate3d(-50%, -50%, 0) scale(0.75) rotate(var(--sparkle-rotate));
+        animation: sparkleFade 0.75s ease-out forwards;
+    }
+}
+
+@keyframes sparkleFade {
+    0% {
+        opacity: 1;
+        transform: translate3d(-50%, -50%, 0) scale(0.75) rotate(var(--sparkle-rotate));
+    }
+
+    60% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+        transform: translate3d(-50%, -50%, 0) scale(1.25) rotate(var(--sparkle-rotate-end));
+    }
+}
+
+@media (hover: none),
+(pointer: coarse) {
+    .cursor_sparkle {
+        display: none;
+    }
+}
